@@ -1,15 +1,20 @@
-import type { FC, SVGProps } from "react";
+import type { Icon } from "@enymo/bcc";
 
-export type Icon = FC<SVGProps<SVGSVGElement>>;
 
 export let EllipsisVertical: Icon;
 export let Filter: Icon;
+export let Gear: Icon;
+export let RightFromBracket: Icon;
 
-type IconName = "ellipsisVertical" | "filter";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket";
 export function configureAdminIcons({
     ellipsisVertical,
-    filter
+    filter,
+    gear,
+    rightFromBracket
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
     Filter = filter;
+    Gear = gear;
+    RightFromBracket = rightFromBracket;
 }

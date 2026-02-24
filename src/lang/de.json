@@ -4,5 +4,9 @@
     "active_zero": "Keine Filter angewendet",
     "active_one": "{{count}} Filter angewendet",
     "active_other": "{{count}} Filter angewendet"
+  },
+  "pagination": {
+    "page": "Seite {{page}} / {{total}}",
+    "items": "{{perPage}} von {{total}} Einträgen"
   }
 }

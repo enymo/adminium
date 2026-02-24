@@ -6,6 +6,8 @@ import "../css/storybook.css";
 import de from "../lang/de.json";
 import CheckIcon from "../svg/check-solid-full.svg?react";
 import ChevronDown from "../svg/chevron-down-solid-full.svg?react";
+import ChevronLeft from "../svg/chevron-left-solid-full.svg?react";
+import ChevronRight from "../svg/chevron-right-solid-full.svg?react";
 import CircleExclamationIcon from "../svg/circle-exclamation-solid-full.svg?react";
 import CircleNotchIcon from "../svg/circle-notch-solid-full.svg?react";
 import CircleQuestionIcon from "../svg/circle-question-regular-full.svg?react";
@@ -23,7 +25,9 @@ configureIcons({
 
 configureAdminIcons({
     ellipsisVertical: EllispisVerticalIcon,
-    filter: FilterIcon
+    filter: FilterIcon,
+    chevronLeft: ChevronLeft,
+    chevronRight: ChevronRight
 });
 
 i18next

@@ -30,6 +30,7 @@
     "vite-plugin-svgr": "^4.5.0"
   },
   "peerDependencies": {
+    "@enymo/bcc": "^0.2.0",
     "react": "^19.2.4",
     "tailwindcss": "^4.2.1"
   }

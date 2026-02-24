@@ -13,6 +13,8 @@ import CircleNotchIcon from "../svg/circle-notch-solid-full.svg?react";
 import CircleQuestionIcon from "../svg/circle-question-regular-full.svg?react";
 import EllispisVerticalIcon from "../svg/ellipsis-vertical-solid-full.svg?react";
 import FilterIcon from "../svg/filter-solid-full.svg?react";
+import GearIcon from "../svg/gear-solid-full.svg?react";
+import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
 import { configureAdminIcons } from "./icons";
 
 configureIcons({
@@ -26,6 +28,8 @@ configureIcons({
 configureAdminIcons({
     ellipsisVertical: EllispisVerticalIcon,
     filter: FilterIcon,
+    gear: GearIcon,
+    rightFromBracket: RightFromBracketIcon,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight
 });

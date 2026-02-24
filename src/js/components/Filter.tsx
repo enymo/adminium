@@ -27,7 +27,7 @@ export default function Filter({active, children}: {
             </div>
             <div className={clsx("flex items-center px-4 text-xs border-l border-neutral-100", active > 0 ? "text-text-700" : "text-text-300")}>
                 {t("filters.active", {count: active})}
-            </div>ä
+            </div>
         </div>
     )
 }

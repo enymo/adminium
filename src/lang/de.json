@@ -8,5 +8,6 @@
   "pagination": {
     "page": "Seite {{page}} / {{total}}",
     "items": "{{perPage}} von {{total}} Einträgen"
-  }
+  },
+  "logout": "Abmelden"
 }

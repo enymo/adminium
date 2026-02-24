@@ -1,7 +1,8 @@
+@import "@enymo/bcc/styles.css";
+
 @theme {
     --font-sans: Inter, sans-serif;
 
-    --color-*: initial;
     --color-white: white;
     --color-black: black;
     --color-transparent: transparent;
@@ -71,7 +72,6 @@
     --color-hint-700: #175CC4;
     --color-hint-900: #0D3672;
 
-    --text-*: initial;
     --text-2xs: 12px;
     --text-xs: 13px;
     --text-sm: 14px;
@@ -81,6 +81,8 @@
     --text-2xl: 20px;
     --text-3xl: 22px;
     --text-4xl: 24px;
+
+    --radius-xs: 4px;
 
     --shadow-*: initial;
     --shadow-card: 0 1px 6px -1px #817B9433;

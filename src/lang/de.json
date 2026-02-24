@@ -1,0 +1,8 @@
+{
+  "filters": {
+    "label": "Filter",
+    "active_zero": "Keine Filter angewendet",
+    "active_one": "{{count}} Filter angewendet",
+    "active_other": "{{count}} Filter angewendet"
+  }
+}

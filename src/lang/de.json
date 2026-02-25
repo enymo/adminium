@@ -9,5 +9,12 @@
     "page": "Seite {{page}} / {{total}}",
     "items": "{{perPage}} von {{total}} Einträgen"
   },
-  "logout": "Abmelden"
+  "logout": "Abmelden",
+  "upload": "Hochladen",
+  "search": "Suche",
+  "download": "Herunterladen",
+  "email": {
+    "pattern": "Bitte gib eine gültige E-Mail-Adresse ein",
+    "label": "E-Mail-Adresse"
+  }
 }

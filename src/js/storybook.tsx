@@ -5,7 +5,9 @@ import { MemoryRouter } from "react-router";
 import "../css/storybook.css";
 import de from "../lang/de.json";
 import ArrowDownLong from "../svg/arrow-down-long-solid-full.svg?react";
+import ArrowDownRight from "../svg/arrow-down-solid-full.svg?react";
 import ArrowUpLong from "../svg/arrow-up-long-solid-full.svg?react";
+import ArrowUpRight from "../svg/arrow-up-solid-full.svg?react";
 import CheckIcon from "../svg/check-solid-full.svg?react";
 import ChevronDown from "../svg/chevron-down-solid-full.svg?react";
 import ChevronLeft from "../svg/chevron-left-solid-full.svg?react";
@@ -17,6 +19,7 @@ import EllispisVerticalIcon from "../svg/ellipsis-vertical-solid-full.svg?react"
 import FilterIcon from "../svg/filter-solid-full.svg?react";
 import GearIcon from "../svg/gear-solid-full.svg?react";
 import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
+import XMark from "../svg/xmark-solid-full.svg?react";
 import { configureAdminIcons } from "./icons";
 
 configureIcons({
@@ -34,8 +37,11 @@ configureAdminIcons({
     rightFromBracket: RightFromBracketIcon,
     chevronLeft: ChevronLeft,
     chevronRight: ChevronRight,
+    arrowUpRight: ArrowUpRight,
+    arrowDownRight: ArrowDownRight,
     arrowUpLong: ArrowUpLong,
-    arrowDownLong: ArrowDownLong
+    arrowDownLong: ArrowDownLong,
+    xMark: XMark
 });
 
 i18next

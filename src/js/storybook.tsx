@@ -4,6 +4,8 @@ import { initReactI18next } from "react-i18next";
 import { MemoryRouter } from "react-router";
 import "../css/storybook.css";
 import de from "../lang/de.json";
+import ArrowDownLong from "../svg/arrow-down-long-solid-full.svg?react";
+import ArrowUpLong from "../svg/arrow-up-long-solid-full.svg?react";
 import CheckIcon from "../svg/check-solid-full.svg?react";
 import ChevronDown from "../svg/chevron-down-solid-full.svg?react";
 import ChevronLeft from "../svg/chevron-left-solid-full.svg?react";
@@ -31,7 +33,9 @@ configureAdminIcons({
     gear: GearIcon,
     rightFromBracket: RightFromBracketIcon,
     chevronLeft: ChevronLeft,
-    chevronRight: ChevronRight
+    chevronRight: ChevronRight,
+    arrowUpLong: ArrowUpLong,
+    arrowDownLong: ArrowDownLong
 });
 
 i18next

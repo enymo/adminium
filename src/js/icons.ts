@@ -8,15 +8,19 @@ export let Gear: Icon;
 export let RightFromBracket: Icon;
 export let ChevronLeft: Icon;
 export let ChevronRight: Icon;
+export let ArrowUpLong: Icon;
+export let ArrowDownLong: Icon;
 
-type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong";
 export function configureAdminIcons({
     ellipsisVertical,
     filter,
     gear,
     rightFromBracket,
     chevronLeft,
-    chevronRight
+    chevronRight,
+    arrowUpLong,
+    arrowDownLong
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
     Filter = filter;
@@ -24,4 +28,6 @@ export function configureAdminIcons({
     RightFromBracket = rightFromBracket;
     ChevronLeft = chevronLeft;
     ChevronRight = chevronRight;
+    ArrowUpLong = arrowUpLong;
+    ArrowDownLong = arrowDownLong;
 }

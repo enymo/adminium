@@ -6,7 +6,7 @@ export default function Badge({className, variant, children}: {
     children: string
 }) {
     return (
-        <div className={classNames("h-6 flex items-center px-1.5 text-xs rounded-md", {
+        <div className={classNames("h-6 flex items-center px-1.5 body-s-md rounded-md", {
             "bg-bg-900 text-text-600": variant === "neutral",
             "bg-primary-100 text-primary-700": variant === "primary",
             "bg-success-100 text-success-700": variant === "success",

@@ -15,12 +15,12 @@ export default function Filter({active, children}: {
     return (
         <div className="flex gap-4 items-center">
             <div ref={ref} className="relative">
-                <button onClick={() => setOpen(!open)} className={clsx("cursor-pointer h-8.5 px-2.5 rounded-sm text-sm flex justify-center items-center gap-1.5", open ? "bg-neutral-400 fill-white text-white" : "bg-bg-900 text-text-700 fill-neutral-600")}>
+                <button onClick={() => setOpen(!open)} className={clsx("cursor-pointer h-8.5 px-2.5 rounded-lg text-sm flex justify-center items-center gap-1.5", open ? "bg-neutral-400 fill-white text-white" : "bg-bg-900 text-text-700 fill-neutral-600")}>
                     <FilterIcon className="w-4" />
                     {t("filters.label")}
                 </button>
                 {open && (
-                    <div className="bg-white absolute left-px top-[calc(100%+4px)] w-56 rounded-xs px-2.5 py-4 flex flex-col gap-3 shadow-dropdown">
+                    <div className="bg-white absolute left-px top-[calc(100%+4px)] w-56 rounded-md px-2.5 py-4 flex flex-col gap-3 shadow-dropdown">
                         {children}
                     </div>
                 )}

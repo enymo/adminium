@@ -81,9 +81,7 @@
     --text-2xl: 20px;
     --text-3xl: 22px;
     --text-4xl: 24px;
-
-    --radius-xs: 4px;
-
+    
     --shadow-*: initial;
     --shadow-card: 0 1px 6px -1px #817B9433;
     --shadow-dropdown: 0 1px 4px 0 #24243233;

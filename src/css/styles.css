@@ -48,6 +48,11 @@
     --color-primary-800: #0029F5;
     --color-primary-900: #001DAD;
 
+    --color-secondary-000: var(--color-text-800);
+    --color-secondary-600: var(--color-neutral-300);
+    --color-secondary-700: var(--color-bg-300);
+    --color-secondary-800: var(--color-bg-400);
+
     --color-success-100: #E3F7EB;
     --color-success-300: #9FE4BC;
     --color-success-500: #41CA7B;
@@ -60,17 +65,32 @@
     --color-warning-700: #BE7118;
     --color-warning-900: #76460F;
 
-    --color-error-100: #FAE5EA;
-    --color-error-300: #EFA4B6;
-    --color-error-500: #D0254E;
-    --color-error-700: #B32043;
-    --color-error-900: #5F1123;
+    --color-danger-100: #FAE5EA;
+    --color-danger-300: #EFA4B6;
+    --color-danger-500: #D0254E;
+    --color-danger-700: #B32043;
+    --color-danger-900: #5F1123;
 
     --color-hint-100: #E4EDFC;
     --color-hint-300: #9FC1F4;
     --color-hint-500: #337BE7;
     --color-hint-700: #175CC4;
     --color-hint-900: #0D3672;
+
+    --button-padding-horizontal: 10px;
+    --button-radius: 8px;
+    --button-height: 34px;
+    --button-border-width: 1px;
+    --button-shadow-blur: 4px;
+    --button-shadow-spread: -1px;
+    --button-shadow-y: 1px;
+
+    --input-padding-horizontal: 12px;
+    --input-radius: 6px;
+    --input-height: 34px;
+    --input-border-width: 1px;
+
+    --checkbox-border-radius: 3px;
 
     --text-2xs: 12px;
     --text-xs: 13px;
@@ -81,8 +101,8 @@
     --text-2xl: 20px;
     --text-3xl: 22px;
     --text-4xl: 24px;
-    
-    --shadow-*: initial;
+
+    --shadow-input: initial;
     --shadow-card: 0 1px 6px -1px #817B9433;
     --shadow-dropdown: 0 1px 4px 0 #24243233;
     --shadow-toast: 0 1px 6px -2px #26263A26;
@@ -95,33 +115,48 @@
 }
 
 @layer components {
-    .body-s, .body-s-md {
+
+    .body-s,
+    .body-s-md {
         @apply text-xs leading-4;
     }
-    .body-m, .body-m-md {
+
+    .body-m,
+    .body-m-md {
         @apply text-sm leading-5;
     }
-    .body-l, .body-l-md {
+
+    .body-l,
+    .body-l-md {
         @apply text-base leading-5.5;
     }
-    .body-s-md, .body-m-md, .body-l-md {
+
+    .body-s-md,
+    .body-m-md,
+    .body-l-md {
         @apply font-medium;
     }
+
     .heading-2xl {
         @apply text-4xl leading-9 font-semibold;
     }
+
     .heading-xl {
         @apply text-3xl leading-8 font-semibold;
     }
+
     .heading-l {
         @apply text-2xl leading-7.5 font-medium;
     }
+
     .heading-m {
         @apply text-xl leading-6.5 font-medium;
     }
+
     .heading-s {
         @apply text-lg leading-6 font-medium;
     }
+
     .heading-xs {
         @apply text-base leading-5.5 font-semibold;
     }

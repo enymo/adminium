@@ -1,5 +1,5 @@
 {
-  "name": "adminium",
+  "name": "@enymo/adminium",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,6 +8,28 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
+  "author": "enymo GmbH",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enymo/adminium.git"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.cts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist.index.mjs",
+      "require": "./dist.index.cjs"
+    }
+  },
+  "files": [
+    "/dist"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@storybook/react-vite": "^10.2.11",

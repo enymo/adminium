@@ -1,0 +1,128 @@
+@import "@enymo/bcc/styles.css";
+
+@theme {
+    --font-sans: Inter, sans-serif;
+
+    --color-white: white;
+    --color-black: black;
+    --color-transparent: transparent;
+
+    --color-bg-100: #FFFFFF;
+    --color-bg-200: #FDFDFD;
+    --color-bg-300: #FCFCFC;
+    --color-bg-400: #FAFAFA;
+    --color-bg-500: #F5F5F7;
+    --color-bg-600: #F1F1F3;
+    --color-bg-700: #EFF0F2;
+    --color-bg-800: #ECECEE;
+    --color-bg-900: #E8E9EE;
+
+    --color-neutral-100: #F4F3F6;
+    --color-neutral-200: #EFEEF1;
+    --color-neutral-300: #E3E0E8;
+    --color-neutral-400: #A8A3B6;
+    --color-neutral-500: #817B94;
+    --color-neutral-600: #686279;
+    --color-neutral-700: #524E60;
+    --color-neutral-800: #3A3744;
+    --color-neutral-900: #24222A;
+
+    --color-text-100: #E5E4E7;
+    --color-text-200: #CAC8D0;
+    --color-text-300: #B0ADB8;
+    --color-text-400: #9591A1;
+    --color-text-500: #7B7689;
+    --color-text-600: #625E6E;
+    --color-text-700: #4A4752;
+    --color-text-800: #312F37;
+    --color-text-900: #19181C;
+
+    --color-primary-50: #F0F3FF;
+    --color-primary-100: #E8EFFF;
+    --color-primary-200: #C7D8FF;
+    --color-primary-300: #BBD0FF;
+    --color-primary-400: #87ACFF;
+    --color-primary-500: #4E75FF;
+    --color-primary-600: #3F69FF;
+    --color-primary-700: #2448FF;
+    --color-primary-800: #0029F5;
+    --color-primary-900: #001DAD;
+
+    --color-success-100: #E3F7EB;
+    --color-success-300: #9FE4BC;
+    --color-success-500: #41CA7B;
+    --color-success-700: #2CA05C;
+    --color-success-900: #1B6037;
+
+    --color-warning-100: #FCF0E4;
+    --color-warning-300: #F2CA9C;
+    --color-warning-500: #E6963C;
+    --color-warning-700: #BE7118;
+    --color-warning-900: #76460F;
+
+    --color-error-100: #FAE5EA;
+    --color-error-300: #EFA4B6;
+    --color-error-500: #D0254E;
+    --color-error-700: #B32043;
+    --color-error-900: #5F1123;
+
+    --color-hint-100: #E4EDFC;
+    --color-hint-300: #9FC1F4;
+    --color-hint-500: #337BE7;
+    --color-hint-700: #175CC4;
+    --color-hint-900: #0D3672;
+
+    --text-2xs: 12px;
+    --text-xs: 13px;
+    --text-sm: 14px;
+    --text-base: 15px;
+    --text-lg: 16px;
+    --text-xl: 18px;
+    --text-2xl: 20px;
+    --text-3xl: 22px;
+    --text-4xl: 24px;
+    
+    --shadow-*: initial;
+    --shadow-card: 0 1px 6px -1px #817B9433;
+    --shadow-dropdown: 0 1px 4px 0 #24243233;
+    --shadow-toast: 0 1px 6px -2px #26263A26;
+}
+
+@layer base {
+    * {
+        @apply min-h-0 min-w-0 shrink-0;
+    }
+}
+
+@layer components {
+    .body-s, .body-s-md {
+        @apply text-xs leading-4;
+    }
+    .body-m, .body-m-md {
+        @apply text-sm leading-5;
+    }
+    .body-l, .body-l-md {
+        @apply text-base leading-5.5;
+    }
+    .body-s-md, .body-m-md, .body-l-md {
+        @apply font-medium;
+    }
+    .heading-2xl {
+        @apply text-4xl leading-9 font-semibold;
+    }
+    .heading-xl {
+        @apply text-3xl leading-8 font-semibold;
+    }
+    .heading-l {
+        @apply text-2xl leading-7.5 font-medium;
+    }
+    .heading-m {
+        @apply text-xl leading-6.5 font-medium;
+    }
+    .heading-s {
+        @apply text-lg leading-6 font-medium;
+    }
+    .heading-xs {
+        @apply text-base leading-5.5 font-semibold;
+    }
+}

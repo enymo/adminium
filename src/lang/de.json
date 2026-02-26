@@ -16,5 +16,14 @@
   "email": {
     "pattern": "Bitte gib eine gültige E-Mail-Adresse ein",
     "label": "E-Mail-Adresse"
+  },
+  "dashboard": {
+    "period": {
+      "day": "Vorheriger Tag",
+      "week": "Vorherige Woche",
+      "month": "Vorheriger Monat",
+      "year": "Vorheriges Jahr",
+      "other": "Vorheriger Zeitraum"
+    }
   }
 }

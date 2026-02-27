@@ -53,7 +53,7 @@
     "vite-plugin-svgr": "^4.5.0"
   },
   "peerDependencies": {
-    "@enymo/bcc": "^0.5.1",
+    "@enymo/bcc": "^0.6.0",
     "@enymo/react-click-outside-hook": "^2.1.6",
     "@enymo/react-clickable-router": "^3.0.1",
     "@enymo/react-hybrid-input-hook": "^2.0.0",

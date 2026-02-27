@@ -3,10 +3,6 @@
 @theme {
     --font-sans: Inter, sans-serif;
 
-    --color-white: white;
-    --color-black: black;
-    --color-transparent: transparent;
-
     --color-bg-100: #FFFFFF;
     --color-bg-200: #FDFDFD;
     --color-bg-300: #FCFCFC;
@@ -48,10 +44,14 @@
     --color-primary-800: #0029F5;
     --color-primary-900: #001DAD;
 
-    --color-secondary-000: var(--color-text-800);
-    --color-secondary-600: var(--color-neutral-300);
-    --color-secondary-700: var(--color-bg-300);
-    --color-secondary-800: var(--color-bg-400);
+    --color-button-secondary-bg: var(--color-bg-300);
+    --color-button-secondary-border: var(--color-neutral-300);
+    --color-button-secondary-shadow: var(--color-neutral-100);
+    --color-button-secondary-text: var(--color-text-800);
+    --color-button-secondary-hover-bg: var(--color-neutral-400);
+    --color-button-secondary-hover-border: var(--color-neutral-300);
+    --color-button-secondary-hover-shadow: var(--color-neutral-100);
+    --color-button-secondary-hover-text: var(--color-text-800);
 
     --color-success-100: #E3F7EB;
     --color-success-300: #9FE4BC;

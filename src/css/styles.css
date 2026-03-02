@@ -1,5 +1,7 @@
 @import "@enymo/bcc/styles.css";
 
+@source ".";
+
 @theme {
     --font-sans: Inter, sans-serif;
 

@@ -1,6 +1,6 @@
 import { Error } from "@enymo/bcc";
 import useHybridInput from "@enymo/react-hybrid-input-hook";
-import classNames from "classnames";
+import clsx from "clsx";
 import { useRef, useState } from "react";
 import { type RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -44,7 +44,7 @@ export default function ImageInput({
     }
 
     return (
-        <div className={classNames("flex flex-col gap-4", className)}>
+        <div className={clsx("flex flex-col gap-4", className)}>
             <label className="heading-s">{label}</label>
             <div className="flex-1 justify-between flex flex-col items-start gap-2.5">
                 {(objectUrl ?? src) !== undefined && <img className={imageClassName} src={objectUrl ?? src} />}

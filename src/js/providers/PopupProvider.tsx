@@ -77,7 +77,7 @@ export default function PopupProvider({children}: {
                     <Button variant={config.variant === "normal" ? "primary" : "danger"} onClick={() => handleClick(true)}>{config.confirm}</Button>
                 </PopupActions>
             </Popup>
-            )}
+        )}
     </>
 }
 

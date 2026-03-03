@@ -178,7 +178,7 @@ export default function Table<T extends string, U extends string | number>({
                             ))}
                         </tr>
                     </thead>
-                    <tbody className="body-m-md">
+                    <tbody className="body-m">
                         <SortableContext disabled={onDragDrop === undefined} items={rows.filter(({ disableDnd }) => !disableDnd)} strategy={verticalListSortingStrategy}>
                             {rows.map(({ id, disableDnd = false, data }) => (
                                 <TableRow

@@ -44,7 +44,7 @@ export function PopupContent({ className, title, children }: {
 }) {
     return (
         <div className={clsx("px-7 pt-7 pb-10", className)}>
-            {title && <h1 className="heading-m mb-8">{title}</h1>}
+            {title && <h1 className="heading-m text-text-900 mb-8">{title}</h1>}
             {children}
         </div>
     )

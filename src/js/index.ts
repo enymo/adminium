@@ -6,6 +6,7 @@ export { default as FileInput } from "./components/FileInput";
 export { default as Filter } from "./components/Filter";
 export { default as Frame } from "./components/Frame";
 export { default as Pagination } from "./components/Pagination";
+export * from "./components/Popup";
 export { default as SelectMultiple } from "./components/SelectMultiple";
 export { default as Table } from "./components/Table";
 export { default as TableHeader } from "./components/TableHeader";

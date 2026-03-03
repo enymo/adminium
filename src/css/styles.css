@@ -50,7 +50,7 @@
     --color-button-secondary-border: var(--color-neutral-300);
     --color-button-secondary-shadow: var(--color-neutral-100);
     --color-button-secondary-text: var(--color-text-800);
-    --color-button-secondary-hover-bg: var(--color-neutral-400);
+    --color-button-secondary-hover-bg: var(--color-bg-400);
     --color-button-secondary-hover-border: var(--color-neutral-300);
     --color-button-secondary-hover-shadow: var(--color-neutral-100);
     --color-button-secondary-hover-text: var(--color-text-800);

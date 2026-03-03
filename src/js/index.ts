@@ -6,6 +6,7 @@ export { default as EmailInput } from "./components/EmailInput";
 export { default as FileInput } from "./components/FileInput";
 export { default as Filter } from "./components/Filter";
 export { default as Frame } from "./components/Frame";
+export { default as ImageInput } from "./components/ImageInput";
 export { default as Pagination } from "./components/Pagination";
 export * from "./components/Popup";
 export { default as SelectMultiple } from "./components/SelectMultiple";
@@ -14,3 +15,4 @@ export { default as TableHeader } from "./components/TableHeader";
 export * from "./icons";
 export { byId, EmailRegex } from "./utilities";
 export type { LinkedListNode, MaybePromise, Node, PartialBy, RequiredBy } from "./utilities";
+

@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useRef, useState } from "react";
 import { type RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Button } from "../utilities";
+import Button from "./Button";
 import FileInput, { type FileInputRef } from "./FileInputHandler";
 
 export default function ImageInput({

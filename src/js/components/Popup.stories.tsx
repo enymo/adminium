@@ -2,9 +2,7 @@ import type { Meta } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { sleep } from "../storybook";
 import { Button } from "../utilities";
-import Popup from "./Popup";
-import PopupActions from "./PopupActions";
-import PopupContent from "./PopupContent";
+import { Popup, PopupActions, PopupContent } from "./Popup";
 
 const meta = {
     component: Popup

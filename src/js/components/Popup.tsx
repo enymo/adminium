@@ -43,7 +43,7 @@ export function PopupContent({ className, title, children }: {
     children: ReactNode
 }) {
     return (
-        <div className={clsx("px-7 pt-7 pb-10", className)}>
+        <div className={clsx("flex flex-col px-7 pt-7 pb-10", className)}>
             {title && <h1 className="heading-m text-text-900 mb-8">{title}</h1>}
             {children}
         </div>

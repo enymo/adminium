@@ -26,7 +26,8 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./lang/de.json": "./dist/de.json"
   },
   "files": [
     "/dist"

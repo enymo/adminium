@@ -1,3 +1,4 @@
+export { default as AttributeList } from "./components/AttributeList";
 export { default as Badge } from "./components/Badge";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
 export { default as Button } from "./components/Button";

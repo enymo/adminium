@@ -2,6 +2,7 @@ import { Input } from "@enymo/bcc";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import { MagnifyingGlass } from "../icons";
 
 export default function TableHeader({ className, title, onSearch, filter, children }: {
     className?: string,
@@ -16,7 +17,7 @@ export default function TableHeader({ className, title, onSearch, filter, childr
         <div className={clsx("h-16 border-b border-neutral-100 flex items-center justify-between px-8", className)}>
             <div className="flex items-center gap-8">
                 {title && <h2 className="heading-m">{title}</h2>}
-                {onSearch && <Input type="search" placeholder={t("search")} onSearch={onSearch} />}
+                {onSearch && <Input type="search" prefixIcon={MagnifyingGlass} placeholder={t("search")} onSearch={onSearch} />}
                 {filter}
             </div>
             {children}

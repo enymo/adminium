@@ -5,5 +5,8 @@ export default defineConfig({
     tsconfig: "tsconfig.app.json",
     format: ["esm", "cjs"],
     dts: true,
-    copy: "src/css/styles.css"
+    copy: [
+        "src/css/styles.css",
+        "src/lang/de.json"
+    ]
 });

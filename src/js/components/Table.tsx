@@ -188,7 +188,7 @@ export default function Table<T extends string, U extends string | number>({
                                     id={id}
                                     disableDnd={disableDnd}
                                     draggable={onDragDrop !== undefined}
-                                    selectable={selected !== undefined && onChangeSelected !== undefined}
+                                    selectable={name !== undefined || (selected !== undefined && onChangeSelected !== undefined)}
                                     data={data}
                                 />
                             ))}

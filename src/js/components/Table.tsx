@@ -6,6 +6,7 @@ import { CheckboxInput } from "@enymo/bcc";
 import { CheckboxList } from "@enymo/glissade";
 import clsx from "clsx";
 import { type ReactNode, useCallback } from "react";
+import type { RegisterOptions } from "react-hook-form";
 import { ArrowDownLong, ArrowUpLong } from "../icons";
 
 export interface SortBy<T extends string> {
@@ -101,6 +102,7 @@ export default function Table<T extends string, U extends string | number>({
     onChangeSortBy,
     onDragDrop,
     name,
+    options,
     selected,
     onChangeSelected
 }: {
@@ -124,6 +126,7 @@ export default function Table<T extends string, U extends string | number>({
     onChangeSortBy?: (sortBy: SortBy<T>) => void,
     onDragDrop?: DndHandler<U>,
     name?: string,
+    options?: RegisterOptions,
     selected?: U[],
     onChangeSelected?: (selected: U[]) => void
 }) {
@@ -144,7 +147,7 @@ export default function Table<T extends string, U extends string | number>({
 
     return (
         <DndContext onDragEnd={handleDragDrop} modifiers={[restrictToVerticalAxis]}>
-            <CheckboxList name={name} value={selected} onChange={onChangeSelected}>
+            <CheckboxList name={name} options={options} value={selected} onChange={onChangeSelected}>
                 <table className={clsx("border-collapse whitespace-nowrap", className)}>
                     <thead>
                         <tr>

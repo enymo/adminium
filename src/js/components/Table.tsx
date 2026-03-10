@@ -100,6 +100,7 @@ export default function Table<T extends string, U extends string | number>({
     sortBy,
     onChangeSortBy,
     onDragDrop,
+    name,
     selected,
     onChangeSelected
 }: {
@@ -122,6 +123,7 @@ export default function Table<T extends string, U extends string | number>({
     sortBy?: SortBy<T>,
     onChangeSortBy?: (sortBy: SortBy<T>) => void,
     onDragDrop?: DndHandler<U>,
+    name?: string,
     selected?: U[],
     onChangeSelected?: (selected: U[]) => void
 }) {
@@ -142,7 +144,7 @@ export default function Table<T extends string, U extends string | number>({
 
     return (
         <DndContext onDragEnd={handleDragDrop} modifiers={[restrictToVerticalAxis]}>
-            <CheckboxList value={selected} onChange={onChangeSelected}>
+            <CheckboxList name={name} value={selected} onChange={onChangeSelected}>
                 <table className={clsx("border-collapse whitespace-nowrap", className)}>
                     <thead>
                         <tr>

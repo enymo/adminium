@@ -30,7 +30,7 @@ export default function DotsDropdown({className, items}: {
                             "cursor-pointer flex items-center rounded h-8 px-2.5 body-m hover:bg-bg-500 whitespace-nowrap",
                             {
                                 "text-text-700 hover:text-text-800": variant === "normal",
-                                "text-error-500": variant === "danger"
+                                "text-danger-500": variant === "danger"
                             }
                         )}>
                             {children}

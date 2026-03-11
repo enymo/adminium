@@ -5,7 +5,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { CheckboxInput } from "@enymo/bcc";
 import { CheckboxList } from "@enymo/glissade";
 import clsx from "clsx";
-import { type ReactNode, useCallback } from "react";
+import { type ReactNode, useCallback, useMemo } from "react";
 import { ArrowDownLong, ArrowUpLong } from "../icons";
 
 export interface SortBy<T extends string> {
@@ -125,6 +125,8 @@ export default function Table<T extends string, U extends string | number>({
     selected?: U[],
     onChangeSelected?: (selected: U[]) => void
 }) {
+    const ids = useMemo(() => rows.map(({id}) => id), [rows]);
+
     const handleDragDrop = useCallback((e: DragEndEvent) => {
         if (e.over && e.over.id !== e.active.id) {
             onDragDrop?.(e.active.id as U, e.over.id as U, e.delta.y > 0 ? "down" : "up");
@@ -146,12 +148,9 @@ export default function Table<T extends string, U extends string | number>({
                 <table className={clsx("border-collapse whitespace-nowrap", className)}>
                     <thead>
                         <tr>
-                            {selected && onChangeSelected && (
+                            {(name !== undefined || (selected !== undefined && onChangeSelected !== undefined)) && (
                                 <TableHead className="px-8" border>
-                                    <CheckboxInput
-                                        checked={selected.length === rows.length}
-                                        onChange={value => onChangeSelected(value ? rows.map(({ id }) => id) : [])}
-                                    />
+                                    <CheckboxInput value={ids} />
                                 </TableHead>
                             )}
                             {onDragDrop && (

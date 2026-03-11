@@ -10,4 +10,5 @@ export { default as SelectMultiple } from "./components/SelectMultiple";
 export { default as Table } from "./components/Table";
 export { default as TableHeader } from "./components/TableHeader";
 export * from "./icons";
+export { default as PopupProvider, usePopup } from "./providers/PopupProvider";
 

@@ -1,6 +1,6 @@
 import type { Icon } from "@enymo/bcc";
 import clsx from "clsx";
-import { type ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import useAtLocation from "../hooks/AtLocationHook";
@@ -46,6 +46,14 @@ export default function Frame({
     children: ReactNode,
 }) {
     const {t} = useTranslation();
+    const initials = useMemo(() => {
+        let initials = user[0];
+        const index = user.lastIndexOf(" ");
+        if (index !== -1) {
+            initials += user[index + 1];
+        }
+        return initials;
+    }, [user]);
 
     return (
         <div className={clsx("flex", className)}>
@@ -59,7 +67,7 @@ export default function Frame({
                 <div className="flex justify-between p-4">
                     <div className="flex flex-1 gap-2.5 items-center">
                         <div className="size-8 rounded-full border-2 border-primary-400 bg-primary-300 flex items-center justify-center font-bold text-xs text-white">
-                            {user.split(" ").map(([initial]) => initial).join("")}
+                            {initials}
                         </div>
                         <div className="flex flex-1 flex-col items-start">
                             <span className="body-l-md text-ellipsis overflow-hidden">{user}</span>

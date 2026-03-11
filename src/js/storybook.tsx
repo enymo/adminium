@@ -18,6 +18,7 @@ import CircleQuestionIcon from "../svg/circle-question-regular-full.svg?react";
 import EllispisVerticalIcon from "../svg/ellipsis-vertical-solid-full.svg?react";
 import FilterIcon from "../svg/filter-solid-full.svg?react";
 import GearIcon from "../svg/gear-solid-full.svg?react";
+import MagnifyingGlassIcon from "../svg/magnifying-glass-solid-full.svg?react";
 import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
 import XMark from "../svg/xmark-solid-full.svg?react";
 import { configureAdminIcons } from "./icons";
@@ -41,7 +42,8 @@ configureAdminIcons({
     arrowDownRight: ArrowDownRight,
     arrowUpLong: ArrowUpLong,
     arrowDownLong: ArrowDownLong,
-    xMark: XMark
+    xMark: XMark,
+    magnifyingGlass: MagnifyingGlassIcon
 });
 
 i18next

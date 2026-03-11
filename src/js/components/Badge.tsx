@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 
 export default function Badge({className, variant, children}: {
     className?: string,
@@ -6,12 +6,12 @@ export default function Badge({className, variant, children}: {
     children: string
 }) {
     return (
-        <div className={classNames("h-6 flex items-center px-1.5 body-s-md rounded-md", {
+        <div className={clsx("h-6 flex items-center px-1.5 body-s-md rounded-md", {
             "bg-bg-900 text-text-600": variant === "neutral",
             "bg-primary-100 text-primary-700": variant === "primary",
             "bg-success-100 text-success-700": variant === "success",
             "bg-warning-100 text-warning-700": variant === "warning",
-            "bg-error-100 text-error-700": variant === "error"
+            "bg-danger-100 text-danger-700": variant === "error"
         }, className)}>{children}</div>
     )
 }

@@ -24,7 +24,7 @@ export default function Card({
                     maximumFractionDigits: 1
                 }) ?? "-"}</span>
                 {value !== undefined && previous !== undefined && (
-                    <div className={clsx("flex items-center gap-1.5 text-sm font-medium", value > previous ? "text-success-500 fill-success-500" : "text-error-500 fill-error-500")}>
+                    <div className={clsx("flex items-center gap-1.5 text-sm font-medium", value > previous ? "text-success-500 fill-success-500" : "text-danger-500 fill-danger-500")}>
                         {value > previous ? <ArrowUpRight className="w-3" /> : <ArrowDownRight className="w-3" />}
                         {Math.abs((1 - value / previous) * 100).toLocaleString(i18n.language, {
                             minimumFractionDigits: 0,

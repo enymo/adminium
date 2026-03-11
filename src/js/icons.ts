@@ -13,8 +13,9 @@ export let ArrowDownRight: Icon;
 export let ArrowUpLong: Icon;
 export let ArrowDownLong: Icon;
 export let XMark: Icon;
+export let MagnifyingGlass: Icon;
 
-type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass";
 export function configureAdminIcons({
     ellipsisVertical,
     filter,
@@ -26,7 +27,8 @@ export function configureAdminIcons({
     arrowDownRight,
     arrowUpLong,
     arrowDownLong,
-    xMark
+    xMark,
+    magnifyingGlass
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
     Filter = filter;
@@ -39,4 +41,5 @@ export function configureAdminIcons({
     ArrowUpLong = arrowUpLong;
     ArrowDownLong = arrowDownLong;
     XMark = xMark;
+    MagnifyingGlass = magnifyingGlass;
 }

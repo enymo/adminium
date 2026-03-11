@@ -25,5 +25,7 @@
       "year": "Vorheriges Jahr",
       "other": "Vorheriger Zeitraum"
     }
-  }
+  },
+  "confirm": "Bestätigen",
+  "cancel": "Abbrechen"
 }

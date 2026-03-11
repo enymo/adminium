@@ -6,6 +6,7 @@ import { CheckboxInput } from "@enymo/bcc";
 import { CheckboxList } from "@enymo/glissade";
 import clsx from "clsx";
 import { type ReactNode, useCallback, useMemo } from "react";
+import type { RegisterOptions } from "react-hook-form";
 import { ArrowDownLong, ArrowUpLong } from "../icons";
 
 export interface SortBy<T extends string> {
@@ -100,6 +101,8 @@ export default function Table<T extends string, U extends string | number>({
     sortBy,
     onChangeSortBy,
     onDragDrop,
+    name,
+    options,
     selected,
     onChangeSelected
 }: {
@@ -122,6 +125,8 @@ export default function Table<T extends string, U extends string | number>({
     sortBy?: SortBy<T>,
     onChangeSortBy?: (sortBy: SortBy<T>) => void,
     onDragDrop?: DndHandler<U>,
+    name?: string,
+    options?: RegisterOptions,
     selected?: U[],
     onChangeSelected?: (selected: U[]) => void
 }) {
@@ -144,7 +149,7 @@ export default function Table<T extends string, U extends string | number>({
 
     return (
         <DndContext onDragEnd={handleDragDrop} modifiers={[restrictToVerticalAxis]}>
-            <CheckboxList value={selected} onChange={onChangeSelected}>
+            <CheckboxList name={name} options={options} value={selected} onChange={onChangeSelected}>
                 <table className={clsx("border-collapse whitespace-nowrap", className)}>
                     <thead>
                         <tr>
@@ -177,7 +182,7 @@ export default function Table<T extends string, U extends string | number>({
                             ))}
                         </tr>
                     </thead>
-                    <tbody className="body-m-md">
+                    <tbody className="body-m">
                         <SortableContext disabled={onDragDrop === undefined} items={rows.filter(({ disableDnd }) => !disableDnd)} strategy={verticalListSortingStrategy}>
                             {rows.map(({ id, disableDnd = false, data }) => (
                                 <TableRow
@@ -185,7 +190,7 @@ export default function Table<T extends string, U extends string | number>({
                                     id={id}
                                     disableDnd={disableDnd}
                                     draggable={onDragDrop !== undefined}
-                                    selectable={selected !== undefined && onChangeSelected !== undefined}
+                                    selectable={name !== undefined || (selected !== undefined && onChangeSelected !== undefined)}
                                     data={data}
                                 />
                             ))}

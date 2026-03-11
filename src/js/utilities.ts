@@ -1,12 +1,8 @@
-import { createButton } from "@enymo/bcc";
-import { Clickable } from "@enymo/react-clickable-router";
 import { requireNotNull } from "@enymo/ts-nullsafe";
 import { produce } from "immer";
 import type { DndHandler } from "./components/Table";
 
 export const EmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-
-export const Button = createButton(Clickable);
 
 export const byId = <T>(id: T) => (item: {
     id: T
@@ -24,6 +20,10 @@ export interface ResourceLinkedListNode {
     id?: number | string,
     previous_id: number | string | null
 }
+
+export type MaybePromise<T> = Promise<T> | T
+export type RequiredBy<T, U extends keyof T> = Required<Pick<T, U>> & Exclude<T, U>
+export type PartialBy<T, U extends keyof T> = Partial<Pick<T, U>> & Exclude<T, U>
 
 export function getLastLinkedListItem<T extends LinkedListNode>(list: T[]): T | null {
     const nodeWithNextIds = new Set(list.map(({ previous_id }) => previous_id));

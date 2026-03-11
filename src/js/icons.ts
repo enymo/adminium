@@ -14,8 +14,10 @@ export let ArrowUpLong: Icon;
 export let ArrowDownLong: Icon;
 export let XMark: Icon;
 export let MagnifyingGlass: Icon;
+export let ToastSuccessIcon: Icon;
+export let ToastWarningIcon: Icon;
 
-type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass" | "toastSuccessIcon" | "toastWarningIcon";
 export function configureAdminIcons({
     ellipsisVertical,
     filter,
@@ -28,7 +30,9 @@ export function configureAdminIcons({
     arrowUpLong,
     arrowDownLong,
     xMark,
-    magnifyingGlass
+    magnifyingGlass,
+    toastSuccessIcon,
+    toastWarningIcon
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
     Filter = filter;
@@ -42,4 +46,6 @@ export function configureAdminIcons({
     ArrowDownLong = arrowDownLong;
     XMark = xMark;
     MagnifyingGlass = magnifyingGlass;
+    ToastSuccessIcon = toastSuccessIcon;
+    ToastWarningIcon = toastWarningIcon;
 }

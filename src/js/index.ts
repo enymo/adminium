@@ -19,6 +19,6 @@ export { default as useClientSize } from "./hooks/ClientSizeHook";
 export * from "./icons";
 export { default as AdminiumProvider } from "./providers/AdminiumProvider";
 export { default as PopupProvider, usePopup } from "./providers/PopupProvider";
-export { default as ToasterProvider } from "./providers/ToasterProvider";
+export { default as ToasterProvider, useToaster } from "./providers/ToasterProvider";
 export * from "./utilities";
 

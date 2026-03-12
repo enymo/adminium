@@ -3,7 +3,7 @@ import { type ReactNode, useCallback, useEffect, useRef, useState } from "react"
 import { CSSTransition, Transition, TransitionGroup } from "react-transition-group";
 import type { TransitionProps } from "react-transition-group/Transition";
 import useClientSize from "../hooks/ClientSizeHook";
-import { ToastSuccessIcon, ToastWarningIcon } from "../icons";
+import { ToastSuccess, ToastWarning } from "../icons";
 
 export interface ToastOptions {
     title: ReactNode,
@@ -67,9 +67,9 @@ function Toast({
                     >
                         <div ref={innerRef} className="px-3 py-2 shadow-toast rounded-xl bg-bg-100 border border-neutral-100 flex items-start gap-2.5 max-w-sm">
                             {variant === "success" ? (
-                                <ToastSuccessIcon className="mt-1 size-5 fill-success-500" />
+                                <ToastSuccess className="mt-1 size-5 fill-success-500" />
                             ) : (
-                                <ToastWarningIcon className="mt-1 size-5 fill-danger-500" />
+                                <ToastWarning className="mt-1 size-5 fill-danger-500" />
                             )}
                             <div className="flex-1 flex flex-col gap-0.5">
                                 <span className="body-s-md">{title}</span>

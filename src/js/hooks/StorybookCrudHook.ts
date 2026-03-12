@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { sleep } from "../storybook";
+import { sleep } from "../utilities";
 
 export interface StorybookResource {
     id: number

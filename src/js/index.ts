@@ -17,7 +17,7 @@ export { default as useAbortEffect } from "./hooks/AbortEffectHook";
 export { default as useAtLocation } from "./hooks/AtLocationHook";
 export { default as useClientSize } from "./hooks/ClientSizeHook";
 export * from "./icons";
-export { default as AdminiumProviders } from "./providers/AdminiumProvider";
+export { default as AdminiumProvider } from "./providers/AdminiumProvider";
 export { default as PopupProvider, usePopup } from "./providers/PopupProvider";
 export { default as ToasterProvider } from "./providers/ToasterProvider";
 export * from "./utilities";

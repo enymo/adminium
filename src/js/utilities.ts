@@ -1,6 +1,6 @@
 import { requireNotNull } from "@enymo/ts-nullsafe";
 import { produce } from "immer";
-import type { DndHandler } from "./components/Table";
+import type { DndHandler, SortBy } from "./components/Table";
 
 export const EmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -19,6 +19,26 @@ export interface LinkedListNode extends Node {
 export interface ResourceLinkedListNode {
     id?: number | string,
     previous_id: number | string | null
+}
+
+export interface Pagination {
+    current_page: number,
+    from: number,
+    last_page: number,
+    path: string,
+    per_page: number,
+    to: number,
+    total: number
+}
+
+export interface PaginationProps<T extends string> {
+    page: number,
+    itemsPerPage: number,
+    totalItems: number,
+    onChangePage: (page: number) => void,
+    sortBy: SortBy<T>,
+    onChangeSortBy: (sortBy: SortBy<T>) => void,
+    onSearch?: (search: string) => void
 }
 
 export type MaybePromise<T> = Promise<T> | T

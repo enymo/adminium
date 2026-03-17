@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import { sleep } from "../storybook";
+import { sleep } from "../utilities";
 import Button from "./Button";
 
 const meta = {

@@ -1,8 +1,8 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, type DependencyList } from "react";
 import { useSearchParams } from "react-router";
 import { type SortBy } from "../components/Table";
 
-export default function usePaginator<T extends string>() {
+export default function usePaginator<T extends string>(defaultSortBy: SortBy<T>, deps: DependencyList = []) {
     const [searchParams, setSearchParams] = useSearchParams();
     const page = Number(searchParams.get("page")) || 1;
     const q = searchParams.get("q") || undefined;
@@ -11,7 +11,7 @@ export default function usePaginator<T extends string>() {
     const sortBy: SortBy<T> | null = useMemo(() => sortByName !== null && sortByDirection !== null ? {
         column: sortByName as T,
         direction: sortByDirection as "asc" | "desc"
-    } : null, [sortByName, sortByDirection]);
+    } : defaultSortBy, [sortByName, sortByDirection, ...deps]);
 
     const onSearch = useCallback((search: string) => {
         const searchParams = new URLSearchParams;

@@ -21,7 +21,7 @@ export interface ResourceLinkedListNode {
     previous_id: number | string | null
 }
 
-export interface Pagination {
+export interface PaginationMeta {
     current_page: number,
     from: number,
     last_page: number,

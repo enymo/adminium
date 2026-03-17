@@ -45,8 +45,8 @@ configureAdminIcons({
     arrowDownLong: ArrowDownLong,
     xMark: XMark,
     magnifyingGlass: MagnifyingGlassIcon,
-    toastSuccessIcon: CircleCheckIcon,
-    toastWarningIcon: CircleExclamationIcon
+    toastSuccess: CircleCheckIcon,
+    toastWarning: CircleExclamationIcon
 });
 
 i18next
@@ -67,8 +67,6 @@ i18next
             escapeValue: false
         }
     });
-
-export const sleep = (duration: number) => new Promise<void>(resolve => setTimeout(resolve, duration));
 
 export const withMemoryRouter = (initialEntry?: string) => (Story: React.FC) => (
     <MemoryRouter initialEntries={initialEntry ? [initialEntry] : undefined}>

@@ -158,3 +158,5 @@ export function resourceDndSorting<T extends ResourceLinkedListNode>(data: T[], 
         }, "immediate");
     }
 }
+
+export const sleep = (duration: number) => new Promise<void>(resolve => setTimeout(resolve, duration));

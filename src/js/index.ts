@@ -19,6 +19,7 @@ export { default as useClientSize } from "./hooks/ClientSizeHook";
 export { default as usePaginator } from "./hooks/PaginatorHook";
 export * from "./hooks/SanitizedParamHook";
 export * from "./hooks/SearchParamHook";
+export { default as useStorybookCrud } from "./hooks/StorybookCrudHook";
 export * from "./icons";
 export { default as AdminiumProvider } from "./providers/AdminiumProvider";
 export { default as PopupProvider, usePopup } from "./providers/PopupProvider";

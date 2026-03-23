@@ -172,10 +172,10 @@ export default function Table<T extends string, U extends string | number>({
                                         <button className="flex items-center gap-1 fill-neutral-600" type="button" onClick={handleChangeSortBy(name)}>
                                             {label}
                                             {sortBy.column === name ? (sortBy.direction === "asc" ? (
-                                                <ArrowUpLong className="w-1.5" />
+                                                <ArrowUpLong className="w-3" />
                                             ) : (
-                                                <ArrowDownLong className="w-1.5" />
-                                            )) : <div className="w-1.5" />}
+                                                <ArrowDownLong className="w-3" />
+                                            )) : <div className="w-3" />}
                                         </button>
                                     ) : label}
                                 </TableHead>

@@ -111,7 +111,8 @@ export default function Table<T extends string, U extends string | number>({
         name?: T,
         label?: ReactNode,
         colSpan?: number,
-        fill?: boolean
+        fill?: boolean,
+        align?: "left" | "right"
     }[],
     rows: {
         id: U,
@@ -163,20 +164,24 @@ export default function Table<T extends string, U extends string | number>({
                                     <div className="w-11" />
                                 </TableHead>
                             )}
-                            {head.map(({ name, label, colSpan, fill }, index) => (
+                            {head.map(({ name, label, colSpan, fill, align }, index) => (
                                 <TableHead key={index} colSpan={colSpan} className={clsx("pr-3 last:pr-8", {
                                     "pl-8": index > 0 || onDragDrop === undefined,
                                     "w-full": fill
                                 })}>
                                     {name && sortBy && onChangeSortBy ? (
-                                        <button className="flex items-center gap-1 fill-neutral-600" type="button" onClick={handleChangeSortBy(name)}>
-                                            {label}
-                                            {sortBy.column === name ? (sortBy.direction === "asc" ? (
-                                                <ArrowUpLong className="w-3" />
-                                            ) : (
-                                                <ArrowDownLong className="w-3" />
-                                            )) : <div className="w-3" />}
-                                        </button>
+                                        <div className={clsx("flex", {
+                                            "justify-end": align === "right"
+                                        })}>
+                                            <button className="flex items-center gap-1 fill-neutral-600 justify-end" type="button" onClick={handleChangeSortBy(name)}>
+                                                {label}
+                                                {sortBy.column === name ? (sortBy.direction === "asc" ? (
+                                                    <ArrowUpLong className="w-3" />
+                                                ) : (
+                                                    <ArrowDownLong className="w-3" />
+                                                )) : <div className="w-3" />}
+                                            </button>
+                                        </div>
                                     ) : label}
                                 </TableHead>
                             ))}

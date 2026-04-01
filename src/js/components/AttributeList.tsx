@@ -17,7 +17,7 @@ export default function AttributeList({
             <tbody>
                 {items.map(({key, label, value}, index) => (
                     <tr key={key ?? index}>
-                        <th className={clsx("body-m-md pr-6 py-3", {
+                        <th className={clsx("body-m-md pr-6", {
                             "border-t border-neutral-200 pb-0": index > 0
                         })}>{label}</th>
                         <td className={clsx("body-m py-3", {

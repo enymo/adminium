@@ -108,6 +108,7 @@
     --shadow-card: 0 1px 6px -1px #817B9433;
     --shadow-dropdown: 0 1px 4px 0 #24243233;
     --shadow-toast: 0 1px 6px -2px #26263A26;
+    --shadow-attachment: 0 1px 4px -2px #00000026;
 }
 
 @layer base {

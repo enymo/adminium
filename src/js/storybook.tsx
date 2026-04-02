@@ -22,6 +22,7 @@ import GearIcon from "../svg/gear-solid-full.svg?react";
 import MagnifyingGlassIcon from "../svg/magnifying-glass-solid-full.svg?react";
 import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
 import XMark from "../svg/xmark-solid-full.svg?react";
+import Paperclip from "../svg/paperclip-solid-full.svg?react";
 import { configureAdminIcons } from "./icons";
 
 configureIcons({
@@ -46,7 +47,8 @@ configureAdminIcons({
     xMark: XMark,
     magnifyingGlass: MagnifyingGlassIcon,
     toastSuccess: CircleCheckIcon,
-    toastWarning: CircleExclamationIcon
+    toastWarning: CircleExclamationIcon,
+    paperclip: Paperclip
 });
 
 i18next

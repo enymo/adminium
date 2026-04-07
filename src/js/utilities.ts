@@ -4,6 +4,12 @@ import type { DndHandler, SortBy } from "./components/Table";
 
 export const EmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
+const units = ["B", "KB", "MB", "GB"]
+export const formatFileSize = (size: number) => {
+    const index = Math.min(units.length - 1, Math.floor(Math.log(size) / Math.log(1000)))
+    return `${Math.round(size / (1000 ** index))}${units[index]}`
+}
+
 export const byId = <T>(id: T) => (item: {
     id: T
 }) => item.id === id

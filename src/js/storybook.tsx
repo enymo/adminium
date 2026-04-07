@@ -16,13 +16,17 @@ import CircleCheckIcon from "../svg/circle-check-regular-full.svg?react";
 import CircleExclamationIcon from "../svg/circle-exclamation-solid-full.svg?react";
 import CircleNotchIcon from "../svg/circle-notch-solid-full.svg?react";
 import CircleQuestionIcon from "../svg/circle-question-regular-full.svg?react";
+import Download from "../svg/download-solid-full.svg?react";
 import EllispisVerticalIcon from "../svg/ellipsis-vertical-solid-full.svg?react";
+import FaceSmile from "../svg/face-smile-regular-full.svg?react";
 import FilterIcon from "../svg/filter-solid-full.svg?react";
 import GearIcon from "../svg/gear-solid-full.svg?react";
 import MagnifyingGlassIcon from "../svg/magnifying-glass-solid-full.svg?react";
+import PaperPlane from "../svg/paper-plane-solid-full.svg?react";
+import Paperclip from "../svg/paperclip-solid-full.svg?react";
+import Pdf from "../svg/pdf.svg?react";
 import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
 import XMark from "../svg/xmark-solid-full.svg?react";
-import Paperclip from "../svg/paperclip-solid-full.svg?react";
 import { configureAdminIcons } from "./icons";
 
 configureIcons({
@@ -48,7 +52,11 @@ configureAdminIcons({
     magnifyingGlass: MagnifyingGlassIcon,
     toastSuccess: CircleCheckIcon,
     toastWarning: CircleExclamationIcon,
-    paperclip: Paperclip
+    paperclip: Paperclip,
+    download: Download,
+    pdf: Pdf,
+    facesmile: FaceSmile,
+    paperplane: PaperPlane
 });
 
 i18next

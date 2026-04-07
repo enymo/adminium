@@ -17,8 +17,12 @@ export let MagnifyingGlass: Icon;
 export let ToastSuccess: Icon;
 export let ToastWarning: Icon;
 export let Paperclip: Icon;
+export let Download: Icon;
+export let Pdf: Icon;
+export let FaceSmile: Icon;
+export let PaperPlane: Icon;
 
-type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass" | "toastSuccess" | "toastWarning" | "paperclip";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass" | "toastSuccess" | "toastWarning" | "paperclip" | "download" | "pdf" | "facesmile" | "paperplane";
 export function configureAdminIcons({
     ellipsisVertical,
     filter,
@@ -34,7 +38,11 @@ export function configureAdminIcons({
     magnifyingGlass,
     toastSuccess,
     toastWarning,
-    paperclip
+    paperclip,
+    download,
+    pdf,
+    facesmile,
+    paperplane
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
     Filter = filter;
@@ -51,4 +59,8 @@ export function configureAdminIcons({
     ToastSuccess = toastSuccess;
     ToastWarning = toastWarning;
     Paperclip = paperclip;
+    Download = download;
+    Pdf = pdf;
+    FaceSmile = facesmile;
+    PaperPlane = paperplane;
 }

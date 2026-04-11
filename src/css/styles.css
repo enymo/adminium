@@ -109,6 +109,8 @@
     --shadow-dropdown: 0 1px 4px 0 #24243233;
     --shadow-toast: 0 1px 6px -2px #26263A26;
     --shadow-attachment: 0 1px 4px -2px #00000026;
+    --shadow-chat: 0 1px 10px -2px #0000001a;
+    --shadow-chat-focus: 0 1px 8px -2px var(--color-primary-200);
 }
 
 @layer base {
@@ -118,6 +120,11 @@
 }
 
 @layer components {
+
+    .body-xs,
+    .body-xs-md {
+        @apply text-xs leading-4.5
+    }
 
     .body-s,
     .body-s-md {
@@ -134,6 +141,7 @@
         @apply text-base leading-5.5;
     }
 
+    .body-xs-md,
     .body-s-md,
     .body-m-md,
     .body-l-md {

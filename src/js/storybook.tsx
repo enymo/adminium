@@ -27,7 +27,10 @@ import Paperclip from "../svg/paperclip-solid-full.svg?react";
 import Pdf from "../svg/pdf.svg?react";
 import RightFromBracketIcon from "../svg/right-from-bracket-solid-full.svg?react";
 import XMark from "../svg/xmark-solid-full.svg?react";
+import "dayjs/locale/de";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import { configureAdminIcons } from "./icons";
+import dayjs from "dayjs";
 
 configureIcons({
     chevron: ChevronDown,
@@ -77,6 +80,8 @@ i18next
             escapeValue: false
         }
     });
+
+dayjs.extend(localizedFormat);
 
 export const withMemoryRouter = (initialEntry?: string) => (Story: React.FC) => (
     <MemoryRouter initialEntries={initialEntry ? [initialEntry] : undefined}>

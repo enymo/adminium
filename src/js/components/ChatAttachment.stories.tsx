@@ -14,13 +14,12 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        name: "Preisliste gbhhgf2026",
+        name: "Preisliste 2026",
         extension: "pdf",
         type: "pdf",
         size: 24117248,
         preview: "https://picsum.photos/200/300",
         sent: false,
         onRemove: fn(),
-        onDownload: fn()
     }   
 }

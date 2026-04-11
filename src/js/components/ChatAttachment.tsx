@@ -1,27 +1,36 @@
+import clsx from "clsx"
 import { Download, Paperclip, Pdf, XMark } from "../icons"
 import { formatFileSize } from "../utilities"
 
+export interface ChatAttachmentType {
+    id: number | string
+    name: string
+    extension: string
+    type: "pdf" | "image" | "other"
+    size: number
+    preview?: string
+    link: string
+} 
+
+interface ChatAttachmentProps extends Omit<ChatAttachmentType, "id"> {
+    className?: string
+    sent?: boolean
+    onRemove?: () => void
+}
+
 export default function ChatAttachment({
+    className,
     name,
     extension,
     type,
     size,
     preview,
     sent = false,
+    link,
     onRemove,
-    onDownload
-}: {
-    name: string
-    extension: string
-    type: "pdf" | "image" | "other"
-    size: number
-    preview: string
-    sent: boolean
-    onRemove: () => void
-    onDownload: () => void
-}) {
+}: ChatAttachmentProps) {
     return (
-        <div className="relative rounded-lg bg-bg-200 border border-neutral-200 shadow-attachment w-50 h-14.5 py-2 pl-2 pr-3 flex flex-row gap-2.5">
+        <div className={clsx("relative rounded-lg bg-bg-200 border border-neutral-200 shadow-attachment w-50 h-14.5 py-2 pl-2 pr-3 flex flex-row gap-2.5", className)}>
             {(() => {
                 switch (type) {
                     case "other":
@@ -51,9 +60,9 @@ export default function ChatAttachment({
                     </div>
                 </div>
                 {sent && (
-                    <button className="fill-neutral-500 size-5 self-center hover:cursor-pointer" onClick={onDownload}>
+                    <a className="fill-neutral-500 size-5 self-center hover:cursor-pointer" href={link}>
                         <Download />
-                    </button>
+                    </a>
                 )}
             </div>
             {!sent && (

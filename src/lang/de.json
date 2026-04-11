@@ -27,5 +27,15 @@
     }
   },
   "confirm": "Bestätigen",
-  "cancel": "Abbrechen"
+  "cancel": "Abbrechen",
+  "unreadMessages": {
+    "count_one": "{{count}} neue Nachricht",
+    "count_other": "{{count}} neue Nachrichten"
+  },
+  "date": {
+    "distance": {
+      "today": "Heute",
+      "yesterday": "Gestern"
+    }
+  }
 }

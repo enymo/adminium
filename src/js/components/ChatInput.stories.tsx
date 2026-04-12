@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import ChatInput from "./ChatInput";
-import { fn } from "storybook/test";
 
 const meta = {
     component: ChatInput,
@@ -14,6 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
+        value: "",
         className: "w-200",
         placeholder: "Lorem ipsum dolor sit...",
         attachments: [{
@@ -23,7 +23,7 @@ export const Default: Story = {
             type: "pdf",
             size: 24117248,
             preview: "https://picsum.photos/200/300",
-            onRemove: fn(),
+            link: ""
         }, {
             id: 1,
             name: "Preisliste gbhhgf2026",
@@ -31,7 +31,7 @@ export const Default: Story = {
             type: "image",
             size: 24117248,
             preview: "https://picsum.photos/200/300",
-            onRemove: fn(),
+            link: ""
         }, {
             id: 2,
             name: "Preisliste gbhhgf2026",
@@ -39,7 +39,7 @@ export const Default: Story = {
             type: "image",
             size: 24117248,
             preview: "https://picsum.photos/200/300",
-            onRemove: fn(),
+            link: ""
         }, {
             id: 3,
             name: "Preisliste gbhhgf2026",
@@ -47,7 +47,7 @@ export const Default: Story = {
             type: "image",
             size: 24117248,
             preview: "https://picsum.photos/200/300",
-            onRemove: fn(),
+            link: ""
         }]
     }   
 }

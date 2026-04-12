@@ -1,12 +1,12 @@
 import clsx from "clsx"
-import type { ChatAttachmentType } from "./ChatAttachment"
-import ChatInput from "./ChatInput"
-import type { FileInputRef } from "./FileInputHandler"
 import { useMemo, useRef } from "react"
-import FileInput from "./FileInputHandler"
-import ChatMessage from "./ChatMessage"
 import { useTranslation } from "react-i18next"
 import { useDayjs } from "../providers/DayjsProvider"
+import type { ChatAttachmentType } from "./ChatAttachment"
+import ChatInput from "./ChatInput"
+import ChatMessage from "./ChatMessage"
+import type { FileInputRef } from "./FileInputHandler"
+import FileInput from "./FileInputHandler"
 
 export interface ChatMessage {
     id: number
@@ -106,8 +106,8 @@ export default function Chat({
                         showAvatar={index === 0 || messages[index - 1].sender.id !== message.sender.id || !dayjs(messages[index - 1].date).isSame(dayjs(message.date), "date")}
                         showNameAndTimestamp={(messages.length - 1) === index || messages[index + 1].sender.id !== message.sender.id || dayjs(messages[index + 1].date).diff(dayjs(message.date), "minute") > 5}
                     />
-                    {dayjs(lastReadAt).diff(dayjs(message.date), "minutes") > 10 && (
-                        <ChatNewMessageIndicator count={index - 1} />
+                    {dayjs(message.date).isBefore(dayjs(lastReadAt)) && !(dayjs(messages[index + 1].date).isBefore(dayjs(lastReadAt))) && (
+                        <ChatNewMessageIndicator count={index + 1} />
                     )}
                     {((messages.length - 1) === index || !dayjs(messages[index + 1].date).isSame(dayjs(message.date), "date")) && (
                         <ChatDateIndicator date={message.date} />

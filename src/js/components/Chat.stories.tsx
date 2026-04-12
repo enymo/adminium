@@ -14,6 +14,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         className: "max-w-200 self-center",
+        lastReadAt: new Date("1970-01-02T12:00"),
         messages: [{
             id: 0,
             date: new Date("1970-01-02T13:00"),
@@ -25,7 +26,7 @@ export const Default: Story = {
             attachments: [{
                 id: 0,
                 name: "Preisliste 2026",
-                extension: "image",
+                extension: "png",
                 link: "",
                 size: 24117248,
                 type: "image",
@@ -66,7 +67,7 @@ export const Default: Story = {
             attachments: [{
                 id: 0,
                 name: "Preisliste 2026",
-                extension: "image",
+                extension: "png",
                 link: "",
                 size: 24117248,
                 type: "image",

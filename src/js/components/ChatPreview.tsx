@@ -20,7 +20,7 @@ export default function ChatPreview({
 } & Omit<ClickableProps, "children">) {
     return (
         <Clickable
-            className={clsx("relative h-25 border-b border-neutral-200 hover:bg-neutral-200 pt-5 px-6 pb-4.5",
+            className={clsx("flex flex-col relative h-25 border-b border-neutral-200 hover:bg-neutral-200 pt-5 px-6 pb-4.5",
                 {
                     "bg-bg-100": !active,
                     "bg-primary-50": active
@@ -34,7 +34,7 @@ export default function ChatPreview({
                 <div className="absolute bg-primary-400 h-20 w-0.75 left-0 -translate-y-1/2 top-1/2 rounded-br-xs rounded-tr-xs"></div>
             )}
             <div className="flex flex-col gap-2.5">
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row items-center justify-between">
                     <div className="flex flex-row gap-1.5 items-center">
                         <div className="body-m-md text-text-800">{title}</div>
                         {badgeCount > 0 && (

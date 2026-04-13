@@ -12,7 +12,7 @@ export interface ChatMessageProps {
         name: string
         avatar: string | null
     }
-    attachments: ChatAttachmentType[]
+    attachments: ChatAttachmentType<string | number>[]
     showNameAndTimestamp: boolean
     showAvatar: boolean
     incoming: boolean

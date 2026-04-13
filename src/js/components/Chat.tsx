@@ -6,7 +6,7 @@ import type { ChatAttachmentType } from "./ChatAttachment"
 import ChatInput from "./ChatInput"
 import ChatMessage from "./ChatMessage"
 
-export interface ChatMessage {
+export interface ChatMessageType {
     id: number
     date: Date
     sender: {
@@ -80,7 +80,7 @@ export default function Chat<T extends string | number>({
     onSend
 }: {
     className: string
-    messages: ChatMessage[]
+    messages: ChatMessageType[]
     lastReadAt: Date | null
     me: string | number,
     attachments: ChatAttachmentType<T>[]

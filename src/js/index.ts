@@ -2,9 +2,10 @@ export { default as AttributeList } from "./components/AttributeList";
 export { default as Badge } from "./components/Badge";
 export { default as Breadcrumbs } from "./components/Breadcrumbs";
 export { default as Button } from "./components/Button";
-export { default as Chat } from "./components/Chat";
-export { default as ChatAttachment } from "./components/ChatAttachment";
+export { default as Chat, type ChatMessageType } from "./components/Chat";
+export { default as ChatAttachment, type ChatAttachmentType } from "./components/ChatAttachment";
 export { default as ChatInput } from "./components/ChatInput";
+export { default as ChatMessage } from "./components/ChatMessage";
 export { default as ChatPreview } from "./components/ChatPreview";
 export { default as DotsDropdown } from "./components/DotsDropdown";
 export { default as EmailInput } from "./components/EmailInput";
@@ -29,3 +30,4 @@ export { default as AdminiumProvider } from "./providers/AdminiumProvider";
 export { default as PopupProvider, usePopup } from "./providers/PopupProvider";
 export { default as ToasterProvider, useToaster } from "./providers/ToasterProvider";
 export * from "./utilities";
+

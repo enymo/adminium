@@ -1,8 +1,8 @@
 import clsx from "clsx"
-import type { ChatAttachmentType } from "./ChatAttachment"
-import ChatAttachment from "./ChatAttachment"
 import { useMemo } from "react"
 import { useDayjs } from "../providers/DayjsProvider"
+import type { ChatAttachmentType } from "./ChatAttachment"
+import ChatAttachment from "./ChatAttachment"
 
 export interface ChatMessageProps {
     className?: string

@@ -7,7 +7,8 @@ export default function ChatPreview({
     badgeCount,
     time,
     body,
-    active = false
+    active = false,
+    onClick
 }: {
     className?: string
     title: string
@@ -15,6 +16,7 @@ export default function ChatPreview({
     time: string
     body: string
     active?: boolean
+    onClick: () => Promise<void> | void
 } & Omit<ClickableProps, "children">) {
     return (
         <Clickable
@@ -25,6 +27,7 @@ export default function ChatPreview({
                 },
                 className
             )}
+            onClick={onClick}
         >
             {active && (
                 <div className="absolute bg-primary-400 h-20 w-0.75 left-0 -translate-y-1/2 top-1/2 rounded-br-xs rounded-tr-xs"></div>

@@ -106,7 +106,7 @@ export default function Chat({
                         showAvatar={index === 0 || messages[index - 1].sender.id !== message.sender.id || !dayjs(messages[index - 1].date).isSame(dayjs(message.date), "date")}
                         showNameAndTimestamp={(messages.length - 1) === index || messages[index + 1].sender.id !== message.sender.id || dayjs(messages[index + 1].date).diff(dayjs(message.date), "minute") > 5}
                     />
-                    {dayjs(message.date).isBefore(dayjs(lastReadAt)) && !(dayjs(messages[index + 1].date).isBefore(dayjs(lastReadAt))) && (
+                    {messages[index + 1] !== undefined && dayjs(message.date).isBefore(dayjs(lastReadAt)) && !(dayjs(messages[index + 1].date).isBefore(dayjs(lastReadAt))) && (
                         <ChatNewMessageIndicator count={index + 1} />
                     )}
                     {((messages.length - 1) === index || !dayjs(messages[index + 1].date).isSame(dayjs(message.date), "date")) && (

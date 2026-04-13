@@ -1,12 +1,10 @@
 import clsx from "clsx"
-import { useMemo, useRef } from "react"
+import { Fragment, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { useDayjs } from "../providers/DayjsProvider"
 import type { ChatAttachmentType } from "./ChatAttachment"
 import ChatInput from "./ChatInput"
 import ChatMessage from "./ChatMessage"
-import type { FileInputRef } from "./FileInputHandler"
-import FileInput from "./FileInputHandler"
 
 export interface ChatMessage {
     id: number
@@ -16,9 +14,8 @@ export interface ChatMessage {
         name: string
         avatar: string | null
     }
-    incoming: boolean
     message: string
-    attachments: ChatAttachmentType[]
+    attachments: ChatAttachmentType<string | number>[]
 }
 
 function ChatDateIndicator({
@@ -69,61 +66,82 @@ function ChatNewMessageIndicator({
     )
 }
 
-export default function Chat({
+export default function Chat<T extends string | number>({
     className,
     messages,
     lastReadAt,
+    me,
     attachments,
     inputPlaceholder,
     message,
     onChangeMessage,
-    onAttachmentSelected
+    onAttach,
+    onRemoveAttachment,
+    onSend
 }: {
     className: string
     messages: ChatMessage[]
-    lastReadAt: Date
-    attachments: ChatAttachmentType[]
+    lastReadAt: Date | null
+    me: string | number,
+    attachments: ChatAttachmentType<T>[]
     inputPlaceholder: string
     message: string,
-    onChangeMessage: () => void
-    onAttachmentSelected: (files: File[]) => Promise<void> | void
+    onChangeMessage: (message: string) => void
+    onAttach: (files: File[]) => void
+    onRemoveAttachment: (id: T) => void,
+    onSend: () => void | Promise<void>
 }) {
     const dayjs = useDayjs();
 
-    const ref = useRef<FileInputRef>(null);
-
-    const handleAddAttachment = () => {
-        ref.current?.open();
-    }
-
     return (
         <div className={clsx("flex flex-col flex-1", className)}>
-            <div className="overflow-y-auto flex-1 flex flex-col-reverse gap-2.5">
-                {messages.map((message, index) => <>
-                    <ChatMessage
-                        {...message}
-                        className={clsx("", message.incoming ? "self-start" : "self-end")}
-                        showAvatar={index === 0 || messages[index - 1].sender.id !== message.sender.id || !dayjs(messages[index - 1].date).isSame(dayjs(message.date), "date")}
-                        showNameAndTimestamp={(messages.length - 1) === index || messages[index + 1].sender.id !== message.sender.id || dayjs(messages[index + 1].date).diff(dayjs(message.date), "minute") > 5}
-                    />
-                    {messages[index + 1] !== undefined && dayjs(message.date).isBefore(dayjs(lastReadAt)) && !(dayjs(messages[index + 1].date).isBefore(dayjs(lastReadAt))) && (
-                        <ChatNewMessageIndicator count={index + 1} />
-                    )}
-                    {((messages.length - 1) === index || !dayjs(messages[index + 1].date).isSame(dayjs(message.date), "date")) && (
-                        <ChatDateIndicator date={message.date} />
-                    )}
-                </>)}
+            <div className="overflow-y-auto flex-1 flex flex-col items-center">
+                <div className="flex grow flex-col-reverse gap-2.5 pb-12 max-w-3xl w-full">
+                    {messages.map(({id, date, sender, ...props}, index) => {
+                        const incoming = sender.id !== me;
+                        const firstMessage = index === messages.length - 1;
+                        const differentDay = firstMessage || !dayjs(messages[index + 1]!.date).isSame(date, "day");
+                        const showAvatar = index === 0 || messages[index - 1]!.sender.id !== sender.id || dayjs(messages[index - 1]!.date).diff(date, "minutes") > 5;
+                        const showHeader = (
+                            differentDay
+                            || messages[index + 1]!.sender.id !== sender.id
+                            || dayjs(date).diff(messages[index + 1]!.date, "minutes") > 5
+                        )
+
+                        return (
+                            <Fragment key={id}>
+                                <ChatMessage
+                                    date={date}
+                                    sender={sender}
+                                    incoming={incoming}
+                                    {...props}
+                                    className={clsx("", incoming ? "self-start" : "self-end")}
+                                    showAvatar={showAvatar}
+                                    showNameAndTimestamp={showHeader}
+                                />
+                                {((firstMessage && lastReadAt === null) || dayjs(date).isAfter(lastReadAt)) && (firstMessage || dayjs(messages[index + 1]!.date).isBefore(lastReadAt)) && (
+                                    <ChatNewMessageIndicator count={index + 1} />
+                                )}
+                                {differentDay && (
+                                    <ChatDateIndicator date={date} />
+                                )}
+                            </Fragment>
+                        )
+                    })}
+                </div>
             </div>
-            <ChatInput
-                onAddAttachment={handleAddAttachment}
-                onEmojiMenuOpen={() => {}}
-                onSend={() => {}}
-                onChange={onChangeMessage}
-                value={message}
-                attachments={attachments}
-                placeholder={inputPlaceholder}
-            />
-            <FileInput ref={ref} onSelected={onAttachmentSelected}/>
+            <div className="px-4 pb-4 flex flex-col items-center">
+                <ChatInput
+                    className="max-w-3xl w-full"
+                    onAttach={onAttach}
+                    onRemoveAttachment={onRemoveAttachment}
+                    onSend={onSend}
+                    onChange={onChangeMessage}
+                    value={message}
+                    attachments={attachments}
+                    placeholder={inputPlaceholder}
+                />
+            </div>
         </div>
     )
 }

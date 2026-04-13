@@ -16,7 +16,6 @@ export default function ChatPreview({
     time: string
     body: string
     active?: boolean
-    onClick: () => Promise<void> | void
 } & Omit<ClickableProps, "children">) {
     return (
         <Clickable
@@ -36,7 +35,9 @@ export default function ChatPreview({
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-row gap-1.5 items-center">
                         <div className="body-m-md text-text-800">{title}</div>
-                        <div className="rounded-md bg-primary-500 h-4 px-1.25 flex items-center text-2xs text-neutral-200">{badgeCount}</div>
+                        {badgeCount > 0 && (
+                            <div className="rounded-md bg-primary-500 h-4 px-1.25 flex items-center text-2xs text-neutral-200">{badgeCount}</div>
+                        )}
                     </div>
                     <div className="text-text-700 body-s">{time}</div>
                 </div>

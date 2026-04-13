@@ -21,3 +21,14 @@ export const Default: Story = {
         active: false
     }   
 }
+
+export const Active: Story = {
+    args: {
+        title: "Mustermann Gmbh",
+        badgeCount: 1,
+        time: "11:26",
+        body: "Max Mustermann: Hallo, ich habe eine Frage zu meiner Bestellung mit der Bestellnummer: 12345.",
+        className: "w-75",
+        active: true
+    }
+}

@@ -1,19 +1,23 @@
 import clsx from "clsx";
-import { FaceSmile, Paperclip, PaperPlane } from "../icons";
-import ChatAttachment, { type ChatAttachmentType } from "./ChatAttachment";
 import { useEffect, useRef, useState } from "react";
+import { FaceSmile, Paperclip, PaperPlane } from "../icons";
 import AutoSizeTextarea from "./AutoSizeTextarea";
+import ChatAttachment, { type ChatAttachmentType } from "./ChatAttachment";
+import FileInput, { type FileInputRef } from "./FileInputHandler";
+import Loader from "./Loader";
 
 function ChatButton({
     className,
     type,
     disabled,
-    onClick
+    onClick,
+    loading = false
 }: {
     className?: string
     type: "emoji" | "attachment" | "send"
     disabled?: boolean
-    onClick: () => void
+    onClick: () => void,
+    loading?: boolean
 }) {
     switch (type) {
         case "emoji":
@@ -40,34 +44,53 @@ function ChatButton({
                     className={clsx("rounded-md size-8 flex justify-center items-center", disabled ? "bg-neutral-400" : "bg-primary-500 hover:bg-primary-600 hover:cursor-pointer", className)}
                     onClick={onClick}
                 >
-                    <PaperPlane className="size-5 fill-white"/>
+                    {loading ? (
+                        <Loader className="size-5 fill-white" />
+                    ) : (
+                        <PaperPlane className="size-5 fill-white"/>
+                    )}
                 </button>
             )
     }
 }
 
-export default function ChatInput({
+export default function ChatInput<T extends string | number>({
     className,
     placeholder,
     attachments,
     value,
     onChange,
     onEmojiMenuOpen,
-    onAddAttachment,
+    onAttach,
+    onRemoveAttachment,
     onSend
 }: {
     className?: string
     placeholder?: string
-    attachments?: ChatAttachmentType[]
+    attachments: ChatAttachmentType<T>[]
     value: string
-    onChange: () => void
-    onEmojiMenuOpen: () => void
-    onAddAttachment: () => void
-    onSend: () => void
+    onChange: (message: string) => void
+    onEmojiMenuOpen?: () => void
+    onAttach: (files: File[]) => void
+    onRemoveAttachment: (id: T) => void,
+    onSend: () => void | Promise<void>
 }) {
     const [height, setHeight] = useState(0);
+    const [sending, setSending] = useState(false);
+
+    const handleSend = async () => {
+        if (attachments.length === 0 && value === "") return;
+        setSending(true);
+        try {
+            await onSend();
+        }
+        finally {
+            setSending(false);
+        }
+    }
 
     const ref = useRef<HTMLDivElement>(null);
+    const fileInputRef = useRef<FileInputRef>(null);
 
     useEffect(() => {
         const target = ref.current;
@@ -94,13 +117,15 @@ export default function ChatInput({
                 placeholder={placeholder}
                 padding={24}
                 style={{paddingBottom: height + 24}}
-                onChange={onChange}
+                onChange={e => onChange(e.target.value)}
                 value={value}
             />
             <div ref={ref} className="absolute bottom-0 flex flex-col gap-2 w-full px-4 pb-4 pointer-events-none">
                 <div className="flex flex-row flex-wrap gap-2.5">
-                    {attachments?.map((props) => (
+                    {attachments?.map(({id, ...props}) => (
                         <ChatAttachment
+                            key={id}
+                            onRemove={() => onRemoveAttachment(id)}
                             {...props}
                             className="pointer-events-auto"
                         />
@@ -108,12 +133,15 @@ export default function ChatInput({
                 </div>
                 <div className="flex flex-row justify-between">
                     <div className="flex flex-row gap-2">
-                        <ChatButton className="pointer-events-auto" type="emoji" onClick={onEmojiMenuOpen}/>
-                        <ChatButton className="pointer-events-auto" type="attachment" onClick={onAddAttachment}/>
+                        {onEmojiMenuOpen && (
+                            <ChatButton className="pointer-events-auto" type="emoji" onClick={onEmojiMenuOpen} />
+                        )}
+                        <ChatButton className="pointer-events-auto" type="attachment" onClick={() => fileInputRef.current?.open()} />
                     </div>
-                    <ChatButton className="pointer-events-auto" type="send" onClick={onSend}/>
+                    <ChatButton loading={sending} className="pointer-events-auto" type="send" onClick={handleSend}/>
                 </div>
             </div>
+            <FileInput ref={fileInputRef} onSelected={onAttach} />
         </div>
     )
 }

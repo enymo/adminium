@@ -10,6 +10,7 @@ export { default as ChatPreview } from "./components/ChatPreview";
 export { default as DotsDropdown } from "./components/DotsDropdown";
 export { default as EmailInput } from "./components/EmailInput";
 export { default as FileInput } from "./components/FileInput";
+export { default as FileInputHandler, type FileInputProps, type FileInputRef } from "./components/FileInputHandler";
 export { default as Filter } from "./components/Filter";
 export { default as Frame } from "./components/Frame";
 export { default as ImageInput } from "./components/ImageInput";

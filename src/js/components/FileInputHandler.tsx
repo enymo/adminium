@@ -10,7 +10,7 @@ export interface FileInputProps {
     ref: Ref<FileInputRef>
 }
 
-export default function FileInput({
+export default function FileInputHandler({
     onSelected,
     ref,
     ...props

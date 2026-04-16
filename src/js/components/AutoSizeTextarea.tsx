@@ -14,7 +14,6 @@ export default function AutoSizeTextarea({
         const target = ref.current;
         if (target !== null) {
             target.style.height = "0";
-            console.log(target.scrollHeight);
             target.style.height = target.scrollHeight + padding + "px";
         }
     }, [ref, padding])

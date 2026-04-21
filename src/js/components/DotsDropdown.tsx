@@ -8,8 +8,10 @@ interface Item extends ClickableProps {
     variant?: "normal" | "danger"
 }
 
-export default function DotsDropdown({className, items}: {
+export default function DotsDropdown({className, variant = "small", items
+}: {
     className?: string,
+    variant?: "small" | "large" 
     items: Item[]
 }) {
     const [open, setOpen] = useState(false);
@@ -18,10 +20,16 @@ export default function DotsDropdown({className, items}: {
     return (
         <div ref={ref} className={clsx("relative", className)}>
             <button type="button" onClick={() => setOpen(!open)} className={clsx(
-                "cursor-pointer flex justify-center items-center w-4.5 h-6 rounded",
-                open ? "bg-neutral-400 fill-white" : "bg-bg-600 hover:bg-bg-800 fill-neutral-600"
+                "cursor-pointer flex justify-center items-center",
+                {
+                    [open ? "bg-neutral-400 fill-white w-4.5 h-6 rounded" : "bg-bg-600 hover:bg-bg-800 fill-neutral-600 w-4.5 h-6 rounded"]: variant === "small",
+                    [open ? "bg-neutral-400 fill-white w-6.5 h-8.5 rounded-lg" : "bg-bg-600 hover:bg-bg-800 fill-neutral-600 w-6.5 h-8.5 rounded-lg"]: variant === "large",
+                }
             )}>
-                <EllipsisVertical className="h-3" />
+                <EllipsisVertical className={clsx({
+                    "h-3": variant === "small",
+                    "h-5": variant === "large"
+                })} />
             </button>
             {open && (
                 <div className="z-10 rounded-md shadow-dropdown bg-bg-100 absolute top-[calc(100%+4px)] -right-1 flex flex-col gap-0.5 px-2 py-2.5">

@@ -28,3 +28,10 @@ export const Default: Story = {
         }]
     }
 }
+
+export const Large: Story = {
+    args: {
+        ...Default.args,
+        variant: "large"
+    }
+}

@@ -23,7 +23,7 @@ export default function DotsDropdown({className, variant = "small", items
                 "cursor-pointer flex justify-center items-center",
                 {
                     [open ? "bg-neutral-400 fill-white w-4.5 h-6 rounded" : "bg-bg-600 hover:bg-bg-800 fill-neutral-600 w-4.5 h-6 rounded"]: variant === "small",
-                    [open ? "bg-neutral-400 fill-white w-6.5 h-8.5 rounded-lg" : "bg-bg-600 hover:bg-bg-800 fill-neutral-600 w-6.5 h-8.5 rounded-lg"]: variant === "large",
+                    [open ? "bg-neutral-400 fill-white w-6.5 h-8.5 rounded-lg" : "bg-bg-100 hover:bg-bg-800 fill-neutral-600 w-6.5 h-8.5 rounded-lg"]: variant === "large",
                 }
             )}>
                 <EllipsisVertical className={clsx({

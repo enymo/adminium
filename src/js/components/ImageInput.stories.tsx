@@ -8,7 +8,7 @@ const meta = {
         layout: "centered"
     },
     render(args) {
-        const [file, setFile] = useState<File>();
+        const [file, setFile] = useState<File | null>();
 
         return <ImageInput {...args} value={file} onChange={setFile} />
     }
@@ -25,6 +25,6 @@ export const Preview: Story = {
 
 export const Avatar: Story = {
     args: {
-        imageClassName: "size-[112px] rounded-full object-cover"
+        imageClassName: "size-[112px] rounded-full object-cover",
     }
 }

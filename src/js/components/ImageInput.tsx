@@ -17,23 +17,27 @@ export default function ImageInput({
     options,
     label,
     error: externalError,
-    children
+    canClear = false,
+    selectFileButtonLabel,
+    clearFileButtonLabel
 }: {
-    className?: string,
-    imageClassName?: string,
-    src?: string,
-    value?: File,
-    onChange?: (file: File) => void,
-    name?: string,
-    options?: RegisterOptions,
-    label?: string,
-    error?: string,
-    children?: ReactNode
+    className?: string
+    imageClassName?: string
+    src?: string
+    value?: File | null
+    onChange?: (file: File | null) => void 
+    name?: string
+    options?: RegisterOptions
+    label?: string
+    error?: string
+    canClear?: boolean
+    selectFileButtonLabel?: ReactNode
+    clearFileButtonLabel?: ReactNode
 }) {
     const { t } = useTranslation();
     const ref = useRef<FileInputRef>(null);
-    const { value, onChange, error } = useHybridInput({ externalValue, externalOnChange, name, options, externalError });
-    const [prevValue, setPrevValue] = useState<File>();
+    const { value, onChange, error } = useHybridInput({ externalValue, externalOnChange, name, options, externalError, defaultValue: undefined });
+    const [prevValue, setPrevValue] = useState<File | null>();
     const [objectUrl, setObjectUrl] = useState<string>();
 
     if (value !== prevValue) {
@@ -49,12 +53,20 @@ export default function ImageInput({
         <div className={clsx("flex flex-col gap-4", className)}>
             <label className="heading-s">{label}</label>
             <div className="flex-1 justify-between flex flex-col items-start gap-2.5">
-                {(objectUrl ?? src) !== undefined && <img className={imageClassName} src={objectUrl ?? src} />}
+                {value !== null && (objectUrl ?? src) !== undefined && <img className={imageClassName} src={objectUrl ?? src} />}
                 <Button variant="secondary" onClick={() => ref.current?.open()}>
-                    {children === undefined ? t("upload") : children}
+                    {selectFileButtonLabel ?? t("upload")}
                 </Button>
+                {canClear && ((src !== undefined && value !== null) || value) && (
+                    <Button
+                        variant="danger"
+                        onClick={() => onChange(null)}
+                    >{clearFileButtonLabel ?? t("remove")}</Button>
+                )}
             </div>
-            <Error>{error}</Error>
+            {error && (
+                <Error>{error}</Error>
+            )}
             <FileInput ref={ref} accept="image/*" onSelected={([file]) => onChange(file!)} />
         </div>
     )

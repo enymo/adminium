@@ -28,6 +28,7 @@ export * from "./hooks/SearchParamHook";
 export { default as useStorybookCrud } from "./hooks/StorybookCrudHook";
 export * from "./icons";
 export { default as AdminiumProvider } from "./providers/AdminiumProvider";
+export { default as DayjsProvider, useDayjs } from "./providers/DayjsProvider";
 export { default as PopupProvider, usePopup } from "./providers/PopupProvider";
 export { default as ToasterProvider, useToaster } from "./providers/ToasterProvider";
 export * from "./utilities";

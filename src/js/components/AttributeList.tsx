@@ -19,7 +19,7 @@ export default function AttributeList({
                 {items.map(({key, label, value, multiline = false}, index) => (
                     <tr key={key ?? index} className={multiline ? "align-top" : "align-middle"}>
                         <th className={clsx("body-m-md py-3 pr-6", {
-                            "border-t border-neutral-200 pb-0": index > 0
+                            "border-t border-neutral-200": index > 0
                         })}>{label}</th>
                         <td className={clsx("body-m py-3", {
                             "border-t border-neutral-200": index > 0,

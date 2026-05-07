@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import EmailInput from "./EmailInput";
+import { EmailInput } from "./EmailInput";
 
 const meta = {
     component: EmailInput,

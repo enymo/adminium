@@ -3,7 +3,7 @@ import type { Icon } from "@enymo/bcc";
 
 
 export let EllipsisVertical: Icon;
-export let Filter: Icon;
+export let FilterIcon: Icon;
 export let Gear: Icon;
 export let RightFromBracket: Icon;
 export let ChevronLeft: Icon;
@@ -45,7 +45,7 @@ export function configureAdminIcons({
     paperplane
 }: Record<IconName, Icon>) {
     EllipsisVertical = ellipsisVertical;
-    Filter = filter;
+    FilterIcon = filter;
     Gear = gear;
     RightFromBracket = rightFromBracket;
     ChevronLeft = chevronLeft;

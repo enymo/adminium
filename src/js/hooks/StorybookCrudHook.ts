@@ -5,7 +5,7 @@ export interface StorybookResource {
     id: number
 }
 
-export default function useStorybookCrud<T extends StorybookResource>(initialValue: T[] | (() => T[]), sleepDuration = 2000) {
+export function useStorybookCrud<T extends StorybookResource>(initialValue: T[] | (() => T[]), sleepDuration = 2000) {
     const [state, setState] = useState(initialValue);
 
     const onCreate = useCallback(async (data: Omit<T, "id">) => {

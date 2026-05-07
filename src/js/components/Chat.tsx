@@ -3,8 +3,8 @@ import { Fragment, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { useDayjs } from "../providers/DayjsProvider"
 import type { ChatAttachmentType } from "./ChatAttachment"
-import ChatInput from "./ChatInput"
-import ChatMessage from "./ChatMessage"
+import { ChatInput } from "./ChatInput"
+import { ChatMessage } from "./ChatMessage"
 
 export interface ChatMessageType {
     id: number
@@ -66,7 +66,7 @@ function ChatNewMessageIndicator({
     )
 }
 
-export default function Chat<T extends string | number>({
+export function Chat<T extends string | number>({
     className,
     messages,
     lastReadAt,

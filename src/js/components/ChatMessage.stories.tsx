@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import ChatMessage from "./ChatMessage";
+import { ChatMessage } from "./ChatMessage";
 
 const meta = {
     component: ChatMessage,
@@ -27,16 +27,14 @@ export const Default: Story = {
             id: 0,
             name: "Preisliste gbhhgf2026",
             link: "",
-            extension: "pdf",
-            type: "pdf",
+            mimeType: "application/pdf",
             size: 24117248,
             preview: "https://picsum.photos/200/300"
         }, {
             id: 1,
             name: "Preisliste gbhhgf2026",
             link: "",
-            extension: "pdf",
-            type: "pdf",
+            mimeType: "application/pdf",
             size: 24117248,
             preview: "https://picsum.photos/200/300"
         }]

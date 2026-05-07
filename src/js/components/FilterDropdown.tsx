@@ -7,7 +7,7 @@ import { type RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ChevronDown } from "../icons";
 
-export default function FilterDropdown<T extends string | number>({
+export function FilterDropdown<T extends string | number>({
     className,
     name,
     options,

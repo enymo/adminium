@@ -4,10 +4,10 @@ import clsx from "clsx";
 import { useRef, useState, type ReactNode } from "react";
 import { type RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import Button from "./Button";
-import FileInput, { type FileInputRef } from "./FileInputHandler";
+import { Button } from "./Button";
+import { FileInputHandler, type FileInputRef } from "./FileInputHandler";
 
-export default function ImageInput({
+export function ImageInput({
     className,
     imageClassName,
     src,
@@ -67,7 +67,7 @@ export default function ImageInput({
             {error && (
                 <Error>{error}</Error>
             )}
-            <FileInput ref={ref} accept="image/*" onSelected={([file]) => onChange(file!)} />
+            <FileInputHandler ref={ref} accept="image/*" onSelected={([file]) => onChange(file!)} />
         </div>
     )
 }

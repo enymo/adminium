@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export default function Badge({className, variant, children}: {
+export function Badge({className, variant, children}: {
     className?: string,
     variant: "neutral" | "primary" | "success" | "warning" | "error",
     children: string

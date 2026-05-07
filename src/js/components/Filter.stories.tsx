@@ -1,7 +1,7 @@
 import { Input } from "@enymo/bcc";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useMemo, useState } from "react";
-import Filter from "./Filter";
+import { Filter } from "./Filter";
 
 const meta = {
     component: Filter,

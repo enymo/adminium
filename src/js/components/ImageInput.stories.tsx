@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
-import ImageInput from "./ImageInput";
+import { ImageInput } from "./ImageInput";
 
 const meta = {
     component: ImageInput,

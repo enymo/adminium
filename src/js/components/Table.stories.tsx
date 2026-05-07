@@ -2,7 +2,7 @@ import compare from "@enymo/comparison";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { simpleDndSorting } from "../utilities";
-import Table from "./Table";
+import { Table } from "./Table";
 
 const meta = {
     component: Table,

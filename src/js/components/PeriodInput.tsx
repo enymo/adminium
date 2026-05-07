@@ -1,7 +1,7 @@
 import { Input } from "@enymo/bcc";
 import { useTranslation } from "react-i18next";
 
-export default function PeriodInput({
+export function PeriodInput({
     from,
     to,
     onChangeFrom,

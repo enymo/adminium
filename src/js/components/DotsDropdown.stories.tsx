@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { withMemoryRouter } from "../storybook";
-import DotsDropdown from "./DotsDropdown";
+import { DotsDropdown } from "./DotsDropdown";
 
 const meta = {
     component: DotsDropdown,

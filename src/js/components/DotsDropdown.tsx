@@ -8,7 +8,7 @@ interface Item extends ClickableProps {
     variant?: "normal" | "danger"
 }
 
-export default function DotsDropdown({className, variant = "small", items
+export function DotsDropdown({className, variant = "small", items
 }: {
     className?: string,
     variant?: "small" | "large" 

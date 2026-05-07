@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
-import SelectMultiple from "./SelectMultiple";
+import { SelectMultiple } from "./SelectMultiple";
 
 const meta = {
     component: SelectMultiple,

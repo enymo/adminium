@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 import { FaceSmile, Paperclip, PaperPlane } from "../icons";
-import AutoSizeTextarea from "./AutoSizeTextarea";
-import ChatAttachment, { type ChatAttachmentType } from "./ChatAttachment";
-import FileInput, { type FileInputRef } from "./FileInputHandler";
-import Loader from "./Loader";
+import { AutoSizeTextarea } from "./AutoSizeTextarea";
+import { ChatAttachment, type ChatAttachmentType } from "./ChatAttachment";
+import { FileInputHandler, type FileInputRef } from "./FileInputHandler";
+import { Loader } from "./Loader";
 
 function ChatButton({
     className,
@@ -54,7 +54,7 @@ function ChatButton({
     }
 }
 
-export default function ChatInput<T extends string | number>({
+export function ChatInput<T extends string | number>({
     className,
     placeholder,
     attachments,
@@ -141,7 +141,7 @@ export default function ChatInput<T extends string | number>({
                     <ChatButton loading={sending} className="pointer-events-auto" type="send" onClick={handleSend}/>
                 </div>
             </div>
-            <FileInput ref={fileInputRef} onSelected={onAttach} />
+            <FileInputHandler ref={fileInputRef} onSelected={onAttach} />
         </div>
     )
 }

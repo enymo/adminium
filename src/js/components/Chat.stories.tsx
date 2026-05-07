@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
 import { sleep } from "../utilities";
-import Chat from "./Chat";
+import { Chat } from "./Chat";
 
 const meta = {
     component: Chat,

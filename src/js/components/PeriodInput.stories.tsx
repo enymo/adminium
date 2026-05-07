@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import dayjs from "dayjs";
 import { useState } from "react";
 import { fn } from "storybook/test";
-import PeriodInput from "./PeriodInput";
+import { PeriodInput } from "./PeriodInput";
 
 const meta = {
     component: PeriodInput,

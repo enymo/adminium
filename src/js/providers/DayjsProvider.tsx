@@ -8,7 +8,7 @@ type DayjsFunction = (date?: ConfigType, format?: OptionType, strict?: boolean) 
 const [Provider, useDayjs] = createContext<DayjsFunction>(globalDayjs);
 
 export { useDayjs };
-export default function DayjsProvider({children}: {
+export function DayjsProvider({children}: {
     children: ReactNode
 }) {
     const { i18n } = useTranslation();

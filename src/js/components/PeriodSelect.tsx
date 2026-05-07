@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export default function PeriodSelect<T extends string>({
+export function PeriodSelect<T extends string>({
     value,
     onChange,
     choices

@@ -4,10 +4,10 @@ import clsx from "clsx";
 import { useRef } from "react";
 import { type RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import Button from "./Button";
-import BaseFileInput, { type FileInputRef } from "./FileInputHandler";
+import { Button } from "./Button";
+import { FileInputHandler, type FileInputRef } from "./FileInputHandler";
 
-export default function FileInput({
+export function FileInput({
     className,
     url,
     filename,
@@ -49,7 +49,7 @@ export default function FileInput({
                 <Button variant="secondary" onClick={() => ref.current?.open()}>{t("upload")}</Button>
             </div>
             {error && <Error>{error}</Error>}
-            <BaseFileInput ref={ref} accept={accept} onSelected={([file]) => onChange(file!)} />
+            <FileInputHandler ref={ref} accept={accept} onSelected={([file]) => onChange(file!)} />
         </div>
     )
 }

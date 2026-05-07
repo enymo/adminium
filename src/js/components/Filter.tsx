@@ -2,9 +2,9 @@ import useOnClickOutside from "@enymo/react-click-outside-hook";
 import clsx from "clsx";
 import { useState, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import { Filter as FilterIcon } from "../icons";
+import { FilterIcon } from "../icons";
 
-export default function Filter({active, children}: {
+export function Filter({active, children}: {
     active: number,
     children: ReactNode
 }) {

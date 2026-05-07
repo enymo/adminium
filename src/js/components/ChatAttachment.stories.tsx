@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import ChatAttachment from "./ChatAttachment";
+import { ChatAttachment } from "./ChatAttachment";
 
 const meta = {
     component: ChatAttachment,
@@ -15,8 +15,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         name: "Preisliste 2026",
-        extension: "pdf",
-        type: "pdf",
+        mimeType: "application/pdf",
+        link: "#",
         size: 24117248,
         preview: "https://picsum.photos/200/300",
         sent: false,

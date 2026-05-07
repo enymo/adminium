@@ -2,7 +2,7 @@ import { useCallback, useMemo, type DependencyList } from "react";
 import { useSearchParams } from "react-router";
 import { type SortBy } from "../components/Table";
 
-export default function usePaginator<T extends string>(defaultSortBy: SortBy<T>, deps: DependencyList = []) {
+export function usePaginator<T extends string>(defaultSortBy: SortBy<T>, deps: DependencyList = []) {
     const [searchParams, setSearchParams] = useSearchParams();
     const page = Number(searchParams.get("page")) || 1;
     const q = searchParams.get("q") || undefined;

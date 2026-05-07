@@ -2,7 +2,7 @@ import clsx from "clsx";
 import mime from "mime-types";
 import { Download, Paperclip, Pdf, XMark } from "../icons";
 import { formatFileSize } from "../utilities";
-import Loader from "./Loader";
+import { Loader } from "./Loader";
 
 export interface ChatAttachmentType<T extends string | number> {
     id: T
@@ -20,7 +20,7 @@ interface ChatAttachmentProps<T extends string | number> extends Omit<ChatAttach
     onRemove?: () => void
 }
 
-export default function ChatAttachment<T extends string | number>({
+export function ChatAttachment<T extends string | number>({
     className,
     name,
     mimeType,

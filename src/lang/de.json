@@ -13,10 +13,6 @@
   "upload": "Hochladen",
   "search": "Suche",
   "download": "Herunterladen",
-  "email": {
-    "pattern": "Bitte gib eine gültige E-Mail-Adresse ein",
-    "label": "E-Mail-Adresse"
-  },
   "dashboard": {
     "period": {
       "day": "Vorheriger Tag",
@@ -38,5 +34,41 @@
       "yesterday": "Gestern"
     }
   },
-  "remove": "Entfernen"
+  "remove": "Entfernen",
+  "login": {
+    "title": "Anmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "submit": "Anmelden"
+  },
+  "input": {
+    "email": {
+      "label": "E-Mail",
+      "required": "Bitte geben Sie eine E-Mail -Adresse ein",
+      "pattern": "Bit geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "password": {
+      "label": "Passwort",
+      "required": "Bitte geben Sie ein Passwort ein",
+      "minLength": "Mindestens 8 Zeichen"
+    }
+  },
+  "forgotPassword": {
+    "reset": "Passwort zurücksetzen",
+    "text": "Wir haben Ihnen eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts gesendet.",
+    "resend": "Keine E-Mail erhalten? <1>Erneut anfordern</1>",
+    "title": "Passwort vergessen",
+    "backToLogin": "Zurück zur Anmeldung"
+  },
+  "resetPassword": {
+    "setPassword": "Passwort setzen",
+    "title": "Neues Passwort setzen"
+  },
+  "filterDropdown": {
+    "none": "Alle",
+    "multiple": "Mehrere"
+  },
+  "selectMultiple": {
+    "selected": "Mehrere",
+    "noResults": "Keine Ergebnisse"
+  }
 }

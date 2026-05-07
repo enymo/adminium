@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useArgs } from "storybook/preview-api";
-import FilterDropdown from "./FilterDropdown";
+import { FilterDropdown } from "./FilterDropdown";
 
 const meta = {
     component: FilterDropdown,

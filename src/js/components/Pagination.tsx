@@ -16,7 +16,7 @@ function PaginationButton({icon: Icon, ...props}: {
     )
 }
 
-export default function Pagination({className, page, onChangePage, itemsPerPage, totalItems, borderBottom = false}: {
+export function Pagination({className, page, onChangePage, itemsPerPage, totalItems, borderBottom = false}: {
     className?: string,
     page: number,
     onChangePage: (page: number) => void,

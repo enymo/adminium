@@ -3,7 +3,7 @@ import Gauge from "../../svg/gauge-solid-full.svg?react";
 import Logo from "../../svg/logo.svg?react";
 
 import { withMemoryRouter } from "../storybook";
-import Frame from "./Frame";
+import { Frame } from "./Frame";
 
 const meta = {
     component: Frame,

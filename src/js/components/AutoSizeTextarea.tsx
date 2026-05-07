@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, type ChangeEventHandler, type InputHTMLAttributes } from "react";
 
-export default function AutoSizeTextarea({
+export function AutoSizeTextarea({
     value,
     onChange,
     padding,

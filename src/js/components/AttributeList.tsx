@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import type { Key, ReactNode } from "react"
 
-export default function AttributeList({
+export function AttributeList({
     items,
     className
 }:{ 

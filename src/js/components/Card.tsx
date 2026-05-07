@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { ArrowDownRight, ArrowUpRight } from "../icons";
 
-export default function Card({
+export function Card({
     title,
     value,
     previous,

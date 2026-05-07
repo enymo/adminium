@@ -1,7 +1,7 @@
 import { Clickable, type ClickableProps } from "@enymo/react-clickable-router";
 import clsx from "clsx";
 
-export default function ChatPreview({
+export function ChatPreview({
     className,
     title,
     badgeCount,

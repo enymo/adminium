@@ -2,7 +2,7 @@ import { createRequiredContext } from "@enymo/react-better-context";
 import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { CSSTransition, Transition, TransitionGroup } from "react-transition-group";
 import type { TransitionProps } from "react-transition-group/Transition";
-import useClientSize from "../hooks/ClientSizeHook";
+import { useClientSize } from "../hooks/ClientSizeHook";
 import { ToastSuccess, ToastWarning } from "../icons";
 
 export interface ToastOptions {
@@ -84,7 +84,7 @@ function Toast({
 }
 
 export { useToaster };
-export default function ToasterProvider({children}: {
+export function ToasterProvider({children}: {
     children: ReactNode
 }) {
     const [toasts, setToasts] = useState<ToastState[]>([]);

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import Breadcrumbs from "./Breadcrumbs";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 const meta = {
     component: Breadcrumbs,

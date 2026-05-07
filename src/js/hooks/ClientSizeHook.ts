@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import useAbortEffect from "./AbortEffectHook";
+import { useAbortEffect } from "./AbortEffectHook";
 
-export default function useClientSize<T extends HTMLElement>() {
+export function useClientSize<T extends HTMLElement>() {
     const ref = useRef<T>(null);
     const [size, setSize] = useState<{
         width: number | undefined,

@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { MagnifyingGlass } from "../icons";
 
-export default function TableHeader({ className, title, onSearch, filter, children }: {
+export function TableHeader({ className, title, onSearch, filter, children }: {
     className?: string,
     title?: ReactNode,
     onSearch?: (search: string) => void,

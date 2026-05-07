@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { useMemo, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import useAtLocation from "../hooks/AtLocationHook";
+import { useAtLocation } from "../hooks/AtLocationHook";
 import { Gear, RightFromBracket } from "../icons";
 
 interface MenuItemProps {
@@ -28,7 +28,7 @@ function MenuItem({to, icon: Icon, children}: MenuItemProps) {
     )
 }
 
-export default function Frame({
+export function Frame({
     className,
     logo,
     items,

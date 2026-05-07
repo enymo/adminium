@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import ChatPreview from "./ChatPreview";
+import { ChatPreview } from "./ChatPreview";
 
 const meta = {
     component: ChatPreview,

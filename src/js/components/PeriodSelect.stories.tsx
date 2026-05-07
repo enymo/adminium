@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
-import PeriodSelect from "./PeriodSelect";
+import { PeriodSelect } from "./PeriodSelect";
 
 const meta = {
     component: PeriodSelect,

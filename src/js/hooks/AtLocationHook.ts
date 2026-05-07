@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useLocation, useSearchParams } from "react-router";
 
-export default function useAtLocation(target?: string) {
+export function useAtLocation(target?: string) {
     const location = useLocation();
     const [searchParams] = useSearchParams();
 

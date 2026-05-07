@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
-import Filter from "./Filter";
-import TableHeader from "./TableHeader";
+import { Filter } from "./Filter";
+import { TableHeader } from "./TableHeader";
 
 const meta = {
     component: TableHeader,

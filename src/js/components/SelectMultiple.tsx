@@ -9,7 +9,7 @@ import type { RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ChevronDown, XMark } from "../icons";
 
-export default function SelectMultiple<T extends string | number>({
+export function SelectMultiple<T extends string | number>({
     className,
     name,
     value: externalValue,

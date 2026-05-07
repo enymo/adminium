@@ -2,7 +2,7 @@ import { createRequiredContext } from "@enymo/react-better-context";
 import { assertNotNull } from "@enymo/ts-nullsafe";
 import { type ReactNode, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import Button from "../components/Button";
+import { Button } from "../components/Button";
 import { Popup, PopupActions, PopupContent } from "../components/Popup";
 import { type MaybePromise, type RequiredBy } from "../utilities";
 
@@ -26,7 +26,7 @@ type Show = (config: Config) => Promise<boolean>
 
 const [Provider, usePopup] = createRequiredContext<Show>("PopupProvider must be present in component tree");
 export { usePopup };
-export default function PopupProvider({children}: {
+export function PopupProvider({children}: {
     children: ReactNode
 }) {
     const {t} = useTranslation();

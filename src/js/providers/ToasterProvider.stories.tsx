@@ -1,6 +1,6 @@
 import type { Meta } from "@storybook/react";
-import Button from "../components/Button";
-import ToasterProvider, { useToaster } from "./ToasterProvider";
+import { Button } from "../components/Button";
+import { ToasterProvider, useToaster } from "./ToasterProvider";
 
 const meta: Meta = {
     parameters: {

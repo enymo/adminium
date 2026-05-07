@@ -9,7 +9,7 @@ export interface Breadcrumb {
     children: ReactNode
 }
 
-export default function Breadcrumbs({className, breadcrumbs}: {
+export function Breadcrumbs({className, breadcrumbs}: {
     className?: string,
     breadcrumbs: Breadcrumb[]
 }) {

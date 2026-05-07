@@ -94,7 +94,7 @@ function TableRow({ id, draggable, disableDnd, selectable, data }: {
     )
 }
 
-export default function Table<T extends string, U extends string | number>({
+export function Table<T extends string, U extends string | number>({
     className,
     head,
     rows,

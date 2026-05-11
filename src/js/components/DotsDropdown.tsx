@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { EllipsisVertical } from "../icons";
 
-interface Item extends ClickableProps {
+export interface DotsDropdownItem extends ClickableProps {
     variant?: "normal" | "danger"
 }
 
@@ -12,7 +12,7 @@ export function DotsDropdown({className, variant = "small", items
 }: {
     className?: string,
     variant?: "small" | "large" 
-    items: Item[]
+    items: DotsDropdownItem[]
 }) {
     const [open, setOpen] = useState(false);
     const ref = useOnClickOutside<HTMLDivElement>(() => setOpen(false), [setOpen]);

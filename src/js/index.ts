@@ -9,6 +9,7 @@ export * from "./components/ChatAttachment";
 export * from "./components/ChatInput";
 export * from "./components/ChatMessage";
 export * from "./components/ChatPreview";
+export * from "./components/DataList";
 export * from "./components/DotsDropdown";
 export * from "./components/EmailInput";
 export * from "./components/FileInput";
@@ -37,4 +38,3 @@ export * from "./providers/DayjsProvider";
 export * from "./providers/PopupProvider";
 export * from "./providers/ToasterProvider";
 export * from "./utilities";
-

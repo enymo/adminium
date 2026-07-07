@@ -26,6 +26,7 @@ export * from "./components/SelectMultiple";
 export * from "./components/Table";
 export * from "./components/TableHeader";
 export * from "./hooks/AbortEffectHook";
+export * from "./hooks/ActiveFiltersHook";
 export * from "./hooks/AtLocationHook";
 export * from "./hooks/ClientSizeHook";
 export * from "./hooks/PaginatorHook";

@@ -25,7 +25,7 @@ export const Default: Story = {
 
         return (
             <Filter active={activeCount}>
-                <Input type="select" value={active} onChange={setActive as any} label="Status" choices={[{
+                <Input type="select" value={active} onChange={setActive} label="Status" choices={[{
                     value: "",
                     label: "Alle"
                 }, {
@@ -41,7 +41,7 @@ export const Default: Story = {
                     value: "downgrade",
                     label: "Downgrade geplant"
                 }]} />
-                <Input type="select" value={role} onChange={setRole as any} label="Rolle" choices={[{
+                <Input type="select" value={role} onChange={setRole} label="Rolle" choices={[{
                     value: "",
                     label: "Alle"
                 }, {

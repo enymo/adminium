@@ -55,7 +55,7 @@ export function FilterDropdown<T extends string | number>({
         else {
             return t("filterDropdown.multiple");
         }
-    }, [activeItems]);
+    }, [t, activeItems]);
 
     return (
         <InputFrame id={id} className={className} error={error} label={label}>

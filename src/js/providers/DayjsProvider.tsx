@@ -1,13 +1,8 @@
-import { createContext } from "@enymo/react-better-context";
-import globalDayjs, { type ConfigType, Dayjs, type OptionType } from "dayjs";
+import globalDayjs from "dayjs";
 import { type ReactNode, useCallback } from "react";
 import { useTranslation } from "react-i18next";
+import { DayjsContextProvider, type DayjsFunction } from "../context/DayjsContext";
 
-type DayjsFunction = (date?: ConfigType, format?: OptionType, strict?: boolean) => Dayjs
-
-const [Provider, useDayjs] = createContext<DayjsFunction>(globalDayjs);
-
-export { useDayjs };
 export function DayjsProvider({children}: {
     children: ReactNode
 }) {
@@ -15,8 +10,8 @@ export function DayjsProvider({children}: {
     const dayjs = useCallback<DayjsFunction>((date, format, strict) => globalDayjs(date, format, strict).locale(i18n.language), [i18n.language]);
 
     return (
-        <Provider value={dayjs}>
+        <DayjsContextProvider value={dayjs}>
             {children}
-        </Provider>
+        </DayjsContextProvider>
     )
 }

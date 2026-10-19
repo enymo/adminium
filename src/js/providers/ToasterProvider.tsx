@@ -1,16 +1,10 @@
-import { createRequiredContext } from "@enymo/react-better-context";
 import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { CSSTransition, Transition, TransitionGroup } from "react-transition-group";
 import type { TransitionProps } from "react-transition-group/Transition";
+import { ToasterContextProvider, type ToastOptions } from "../context/ToasterContext";
 import { useClientSize } from "../hooks/ClientSizeHook";
 import { ToastSuccess, ToastWarning } from "../icons";
 
-export interface ToastOptions {
-    title: ReactNode,
-    body: ReactNode,
-    variant: "success" | "error",
-    duration: number
-}
 
 interface ToastProps extends ToastOptions, Omit<TransitionProps, "timeout" | "nodeRef"> {
     onDone: () => void
@@ -19,8 +13,6 @@ interface ToastProps extends ToastOptions, Omit<TransitionProps, "timeout" | "no
 interface ToastState extends ToastOptions {
     id: number
 }
-
-const [Provider, useToaster] = createRequiredContext<(options: ToastOptions) => void>("ToasterProvider must be present in component tree");
 
 function Toast({
     title,
@@ -83,7 +75,6 @@ function Toast({
     )
 }
 
-export { useToaster };
 export function ToasterProvider({children}: {
     children: ReactNode
 }) {
@@ -96,9 +87,9 @@ export function ToasterProvider({children}: {
     }, [setToasts]);
 
     return <>
-        <Provider value={toast}>
+        <ToasterContextProvider value={toast}>
             {children}
-        </Provider>
+        </ToasterContextProvider>
         <TransitionGroup className="fixed z-50 left-1/2 -translate-x-1/2 bottom-16 flex flex-col-reverse">
             {toasts.map(({id, ...props}) => (
                 <Toast

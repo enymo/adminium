@@ -17,7 +17,7 @@ export function useSearchParamString<T extends string | null>(key: string, allow
             }
             return searchParams;
         });
-    }, [setSearchParams]);
+    }, [key, setSearchParams]);
 
     return [value, setValue];
 }
@@ -35,7 +35,7 @@ export function useSearchParamStrings<T extends string>(key: string, allowed: T[
             }
             return searchParams;
         });
-    }, [setSearchParams]);
+    }, [key, setSearchParams]);
 
     return [value, setValue];
 }
@@ -55,7 +55,7 @@ export function useSerachParamNumber<T extends number | null>(key: string, optio
             }
             return searchParams;
         })
-    }, [setSearchParams]);
+    }, [key, setSearchParams]);
 
     return [value, setValue];
 }
@@ -73,7 +73,7 @@ export function useSearchParamNumbers(key: string, options: {min?: number, max?:
             }
             return searchParams;
         })
-    }, [setSearchParams]);
+    }, [key, setSearchParams]);
 
     return [value, setValue];
 }

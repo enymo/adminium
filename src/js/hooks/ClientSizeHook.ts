@@ -1,5 +1,5 @@
+import { useAbortEffect } from "@enymo/react-abortable";
 import { useRef, useState } from "react";
-import { useAbortEffect } from "./AbortEffectHook";
 
 export function useClientSize<T extends HTMLElement>() {
     const ref = useRef<T>(null);

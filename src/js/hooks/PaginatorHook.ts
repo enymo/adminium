@@ -8,6 +8,7 @@ export function usePaginator<T extends string>(defaultSortBy: SortBy<T>, deps: D
     const q = searchParams.get("q") || undefined;
     const sortByName = searchParams.get("sort_by[column]");
     const sortByDirection = searchParams.get("sort_by[direction]");
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     const sortBy: SortBy<T> | null = useMemo(() => sortByName !== null && sortByDirection !== null ? {
         column: sortByName as T,
         direction: sortByDirection as "asc" | "desc"

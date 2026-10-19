@@ -65,7 +65,7 @@ export function SelectMultiple<T extends string | number>({
         value.map(single => requireNotNull(choices.find(choice => choice.value === single), "unable to find choice").label).join(", ")
     ) : (
         t("selectMultiple.selected", { amount: value.length })
-    ), [value, placeholder, choices]);
+    ), [value, placeholder, choices, showMultiple, t]);
 
     useEffect(() => {
         if (open) {

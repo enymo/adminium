@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { Fragment, useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { useDayjs } from "../providers/DayjsProvider"
+import { useDayjs } from "../context/DayjsContext"
 import type { ChatAttachmentType } from "./ChatAttachment"
 import { ChatInput } from "./ChatInput"
 import { ChatMessage } from "./ChatMessage"

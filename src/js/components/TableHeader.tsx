@@ -1,8 +1,7 @@
-import { Input } from "@enymo/bcc";
+import { Input, MagnifyingGlass } from "@enymo/bcc";
 import clsx from "clsx";
 import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import { MagnifyingGlass } from "../icons";
 
 export function TableHeader({ className, title, onSearch, filter, children }: {
     className?: string,

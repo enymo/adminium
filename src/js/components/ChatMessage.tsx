@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { useMemo } from "react"
-import { useDayjs } from "../providers/DayjsProvider"
+import { useDayjs } from "../context/DayjsContext"
 import type { ChatAttachmentType } from "./ChatAttachment"
 import { ChatAttachment } from "./ChatAttachment"
 

@@ -16,7 +16,6 @@ export let ArrowDownRight: Icon = missingIcons;
 export let ArrowUpLong: Icon = missingIcons;
 export let ArrowDownLong: Icon = missingIcons;
 export let XMark: Icon = missingIcons;
-export let MagnifyingGlass: Icon = missingIcons;
 export let ToastSuccess: Icon = missingIcons;
 export let ToastWarning: Icon = missingIcons;
 export let Paperclip: Icon = missingIcons;
@@ -25,7 +24,7 @@ export let Pdf: Icon = missingIcons;
 export let FaceSmile: Icon = missingIcons;
 export let PaperPlane: Icon = missingIcons;
 
-type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "magnifyingGlass" | "toastSuccess" | "toastWarning" | "paperclip" | "download" | "pdf" | "facesmile" | "paperplane";
+type IconName = "ellipsisVertical" | "filter" | "gear" | "rightFromBracket" | "chevronLeft" | "chevronRight" | "arrowUpLong" | "arrowDownLong" | "xMark" | "arrowUpRight" | "arrowDownRight" | "toastSuccess" | "toastWarning" | "paperclip" | "download" | "pdf" | "facesmile" | "paperplane";
 export function configureAdminIcons({
     ellipsisVertical,
     filter,
@@ -38,7 +37,6 @@ export function configureAdminIcons({
     arrowUpLong,
     arrowDownLong,
     xMark,
-    magnifyingGlass,
     toastSuccess,
     toastWarning,
     paperclip,
@@ -58,7 +56,6 @@ export function configureAdminIcons({
     ArrowUpLong = arrowUpLong;
     ArrowDownLong = arrowDownLong;
     XMark = xMark;
-    MagnifyingGlass = magnifyingGlass;
     ToastSuccess = toastSuccess;
     ToastWarning = toastWarning;
     Paperclip = paperclip;

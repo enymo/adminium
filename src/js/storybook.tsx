@@ -38,7 +38,8 @@ configureIcons({
     tooltip: CircleQuestionIcon,
     error: CircleExclamationIcon,
     spinner: CircleNotchIcon,
-    check: CheckIcon
+    check: CheckIcon,
+    magnifyingGlass: MagnifyingGlassIcon,
 });
 
 configureAdminIcons({
@@ -53,7 +54,6 @@ configureAdminIcons({
     arrowUpLong: ArrowUpLong,
     arrowDownLong: ArrowDownLong,
     xMark: XMark,
-    magnifyingGlass: MagnifyingGlassIcon,
     toastSuccess: CircleCheckIcon,
     toastWarning: CircleExclamationIcon,
     paperclip: Paperclip,
